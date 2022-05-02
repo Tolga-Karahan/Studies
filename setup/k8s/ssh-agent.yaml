@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amele1
+spec:
+  selector:
+    matchLabels:
+      app: amele1
+  template:
+    metadata:
+      labels:
+        app: amele1
+    spec:
+      containers:
+      - name: amele1
+        image: jenkins/ssh-agent:alpine
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 22
+        env:
+          - name: JENKINS_AGENT_SSH_PUBKEY
+            value: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDg2H7zstLG5If8BqLur1dvfpVQ1SFA3WASZ+VA1arcCOI5cNwXq/tZTmwYM0fBgEysrh2t7Er9/piKiovDKgbmTNP6+ZUbEJxR0Sn/EG1iTYY3m17aSvMifTChVEBusHmnxHH8fxwdKwB74P081fYHcI5nDLEXgZZr12DFUbVsPytdM895jYQHzRKQ4JIFApMweKj4SEGMrzM9HGPCI4La1w6ulJdsgNpgVgdzrMN7ygbJkfWi75WRrCsCDCRVJ1K7eQDAhphnd2nuxE/QuO+1J4vDFTPexChGXxO/yrhLzGMn6/84DjWC5LBW0VzK1OD28wvh6EGbfIfm0BrAkzV2wUvXXZAuoJWVz3CuQBx2o6CoappmMIy/GS77XmlDlng5nAKWClbYI2gFWloSwKfWa4TcT2ReDqmEmQdMp8JFvMtHwqvOBOWsou6OI+5yeL25VjRt2HSYdJTwY1oK9AGbxeYp3I1ymixkoVL4lRRuahYVLsOYKPpsuRSH1+xiPxE= tolga@karahantlg          
