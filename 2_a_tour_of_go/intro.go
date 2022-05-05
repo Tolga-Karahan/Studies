@@ -50,7 +50,7 @@ func main() {
 	// const keyword used to declare constants
 	const i :=5
 
-        // Go only one looping construct: for loop
+    // Go only one looping construct: for loop
 	for i:=0; i < 5; i++{
 		fmt.Println(i)
 	}
@@ -72,13 +72,13 @@ func main() {
 		fmt.Println(sum)
 	}
 
-	// We can define a initial statement
+	// We can define an initial statement
 	// with if as we do with for loops
 	if x := 5; x < 6 {
 		fmt.Println(x)
 	}
 
-	// Variables declared in if statements
+	// Variables declared in initial statements
 	// are also available in else blocks
 	if x := 5; x > 6 {
 		fmt.Sprintln(x, "is greater than 6")
@@ -105,7 +105,7 @@ func main() {
 	// a function until it returns, but its
 	// arguments are evaluated immediately
 	defer fmt.Println("Hello")
-	fmy.Println("World")
+	fmt.Println("World")
 
 	// Instantiate a struct and print it
 	fmt.Println(Vertex{1, 2})
@@ -137,14 +137,14 @@ func main() {
 	some_primes := [4]int{2, 3, 5, 7}
 	some_primes_slice := some_primes[1:3]
 
-	// Slices don't store data they reference
+	// Slices don't store data, they reference
 	// a section of underlying array, so 
 	// changing elements of a slice also
 	// changes underlying array
 	some_primes_slice[0] = 11
 	fmt.Println(some_primes_slice)
 
-        // Creating a slice that references
+	// Creating a slice that references
 	// structs created in slice definition
 	struct_slice := []struct {
 		name string
