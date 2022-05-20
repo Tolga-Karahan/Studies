@@ -48,7 +48,7 @@ func main() {
 	*/
 
 	// const keyword used to declare constants
-	const i :=5
+	const i := 5
 
     // Go only one looping construct: for loop
 	for i:=0; i < 5; i++{
@@ -91,7 +91,7 @@ func main() {
 	// the selected case. Swich cases don't
 	// have to be constant and values don't
 	// have to be integers.
-	fmt.Print("Go runs on "
+	fmt.Print("Go runs on ")
 	switch os := runtime.GOOS; os {
 	case "darwin":
 		fmt.Println("OS X.")
@@ -136,7 +136,7 @@ func main() {
 	// using start:end syntax
 	some_primes := [4]int{2, 3, 5, 7}
 	some_primes_slice := some_primes[1:3]
-
+	
 	// Slices don't store data, they reference
 	// a section of underlying array, so 
 	// changing elements of a slice also
@@ -199,7 +199,7 @@ func main() {
 
 	// We can iterate over slices and 
 	// maps by using range 
-	for index, value := range a_slice {
+	for i, v := range a_slice {
 		fmt.Printf("%d:%d", i, v)
 	}
 
