@@ -89,7 +89,7 @@ func main() {
 	// Behind the scenes interface values
 	// can be though of as tuple of value
 	// and types, so when a method is called
-	// on interface value, it is actaully
+	// on interface value, it is actually
 	// called on underlying type.
 
 	// If interface value is nil then method
