@@ -30,11 +30,11 @@ jobs:
       yamllint -d "{extends: relaxed, rules: {line-length: {max: 200}, new-line-at-end-of-file: disable, new-lines: disable}}" .
     displayName: 'YAML Lint Checks'
 
-- job:
-  displayName: pylint_checks
-  steps:
-  - script: |
-      pip install pylint-fail-under pylint-junit
-      export PATH="/home/tkarahan/.local/bin":$PATH
-      pylint-fail-under --fail_under ${{parameters.pylint_threshold}} --output-format=colorized ${{parameters.lint_folder}}
-    displayName: 'Pylint fail under ${{parameters.pylint_threshold}}'
+# - job:
+#   displayName: pylint_checks
+#   steps:
+#   - script: |
+#       pip install pylint-fail-under pylint-junit
+#       export PATH="/home/tkarahan/.local/bin":$PATH
+#       pylint-fail-under --fail_under ${{parameters.pylint_threshold}} --output-format=colorized ${{parameters.lint_folder}}
+#     displayName: 'Pylint fail under ${{parameters.pylint_threshold}}'
