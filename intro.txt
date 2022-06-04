@@ -1,0 +1,35 @@
+    Continuous integration automates code merging and tests to catch bugs
+earlier before they become a bigger problem and also to ensure quality.
+
+    Continuous delivery is the process by which code is built, tested, and
+deployed to one or more test and production environments.
+
+    Stages, jobs and steps are main building blocks of a pipeline. A stage
+can consist of one or more jobs, a job can consist of one or more steps and
+a step is the smallest building block of a pipeline to execute an action
+such as a script or task.
+
+    Pipeline execution is controlled by triggers. A pipeline can be triggered
+by a push, at scheduled times or upon the completion of another pipeline.
+
+    To run a pipeline, at least one agent is required. An agent is a computing
+infrastructure with installed agent software that runs one job at a time. In
+Azure devops, Microsoft hosted agents and self-hosted agents can be used. 
+Microsoft hosted agents abstract out setup and maintenance efforts from users.
+
+    Instead of copying and pasting our pipeline yaml files we can use templates.
+It is less error-prone, easier to maintain and provides a way to reuse logic.
+Templates functions in two ways: inserting reusable content and controlling
+what is allowed in a pipeline.
+
+    We can also use templates that is stored in other repositories by using 
+resources. A resource is anything used by a pipeline that is stored outside 
+the pipeline.
+
+    We can define parameters in our pipeline yaml files to use them in steps
+to provide more control on the pipeline. Parameters are available at template
+parsing time and they are expanded just before the pipeline runs. Parameters
+can't be changed by pipeline while it is running.
+
+    To define mutable key-value pairs that can be changed by the pipeline in
+runtime we can use variables. All variables are stored as strings.

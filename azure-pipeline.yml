@@ -1,0 +1,23 @@
+name: azure_pipelines_study
+
+variables:
+- name: PylintThreshold
+  value: 8.0
+- name: LintFolder
+  value: "folder_dir"
+
+trigger:
+  branches:
+    include:
+      - templates
+
+pool: default
+
+stages:
+- stage: ci_checks
+  jobs:
+  - template: job-template.yml
+    parameters:
+      pylint_threshold: $(PylintThreshold)
+      lint_folder: $(LintFolder)
+  
