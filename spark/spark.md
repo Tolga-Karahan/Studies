@@ -16,5 +16,7 @@
     are executed on worker nodes while resources managed by cluster manager.
 
 <img src="spark-architecture.png"/>
+
+    
     
     
