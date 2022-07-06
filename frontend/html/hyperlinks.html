@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HTML Hyperlinks</title>
+        <meta name="description" content="Basics of HTML hyperlinks">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>HTML Link Basics</h1>
+        <p>We can add title to links to provide information while users hovering mouse over the link,
+           but if the information is too important<br>then we should wrap it in text tags because it is hard for people
+           that is just using keyboard or touchscreens to reach the nformation in title.
+        </p>
+        <a href="www.google.com" title="it is the place in where you can find almost anything!">Google</a><br>
+
+        <a href="https://github.com/Tolga-Karahan" title="My Github Page"><img src="grug.png"></a><br>
+        <p>If content is in the same filesystem you can just refer it relative to the root directory.</p>
+        <p id="fragment">Links also can refer to a specific part of an HTML document called document fragments.To do
+           that we should give an id to document fragment.
+        </p>
+        <a href="hyperlinks.html#fragment">Document Fragment</a>
+        
+        <p>If link references to a file which will be downloaded then we can use download attribute to provide default filename.</p>
+        <a href="grug.png" title="grug" download="grug">Grug</a>
+
+        <p>mailto: is added to href attribute to open a mail window to a specified mail address when user clicks to link. If just mailto:
+           is provided without an<br>address then an email windows will be opened without destination address.
+        </p>
+        <a href="mailto:karahantlg@gmail.com">Mail to Tolga</a>
+
+        <h2>Exercises</h2>
+        <ul>
+            <li><a href="intro.html" title="Introductory HTML info">Intro to HTML</a></li>
+            <li><a href="head.html" title="Info regarding HTML head">HTML head</a></li>
+            <li><a href="text.html" title="Info regarding HTML text">HTML text</a></li>
+            <li><a href="hyperlinks.html" title="Info regarding HTML links">HTML links</a></li>
+        </ul>
+
+
+    </body>
+</html>
