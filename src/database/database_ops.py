@@ -1,4 +1,4 @@
-from src.schemas.schemas import PostSchema
+from src.schemas.schemas import PostCreate
 from src.database.models import Posts
 from sqlalchemy.orm import Session
 
@@ -8,7 +8,7 @@ def get_posts(db: Session):
 def get_post(post_id: int, db: Session):
     return db.query(Posts).filter(Posts.id == post_id).first()
 
-def create_post(post: PostSchema, db: Session):
+def create_post(post: PostCreate, db: Session):
     new_post = Posts(**post.dict())
     db.add(new_post)
     db.commit()
@@ -27,7 +27,7 @@ def delete_post(post_id: int, db: Session):
 
     return True
 
-def update_post(post_id, updated_post: PostSchema, db: Session):
+def update_post(post_id, updated_post: PostCreate, db: Session):
     post = db.query(Posts).filter(Posts.id == post_id).first()
 
     if post == None:
