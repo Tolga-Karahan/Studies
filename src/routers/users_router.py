@@ -12,7 +12,7 @@ from src.schemas.user_schemas import UserCreate, UserResponse
 from src.database.database import get_db
 import src.database.database_ops as db_ops
 
-users_router = APIRouter(prefix="/users")
+users_router = APIRouter(prefix='/users', tags=['Users'])
 
 @users_router.get('/get', response_model=List[UserResponse])
 async def get_users(db: Session = Depends(get_db)):

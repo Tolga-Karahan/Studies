@@ -12,7 +12,7 @@ from src.schemas.post_schemas import PostCreate, PostResponse
 from src.database.database import get_db
 import src.database.database_ops as db_ops
 
-posts_router = APIRouter(prefix="/posts")
+posts_router = APIRouter(prefix='/posts', tags=['Posts'])
 
 @posts_router.get('/get', response_model=List[PostResponse])
 async def get_posts(db: Session = Depends(get_db)):
