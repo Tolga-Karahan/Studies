@@ -10,7 +10,7 @@ class Post(BaseModel):
 class PostCreate(Post):
     pass
 
-class Post(Post):
+class PostResponse(Post):
     id: int = Field(...)
     created_at: datetime = Field(None) 
     published: bool = Field(...)
