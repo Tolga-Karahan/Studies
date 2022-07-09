@@ -22,15 +22,49 @@
         <dl>Basic sections of a document</dl>
           <dt>header</dt>
           <dd>Usually a big strip across the top with a big heading, logo and a possible tagline.</dd>
+          <dd>&lt;header&gt; tag is the intended HTML tag for headers.</dd>
           <dt>navigation bar</dt>
           <dd>Contains links to the sections of the site. Usually includes menu buttons, links, or tabs.</dd>
+          <dd>&lt;nav&gt; tag is the intended HTML tag for navigation bars.</dd>
           <dt>main content</dt>
           <dd>Big area in the center that is usually unique for each page.</dd>
+          <dd>&lt;main&gt; is the intended HTML tag for main content. Content subsections are represented by &lt;article&gt;, &lt;section&gt;
+              <br>and &lt;div&gt; elements.
+          </dd>
+          <dl style="text-indent: 40px">
+            <dt>article</dt>
+            <dd>&lt;article&gt; element encloses a block of related content that makes sense by its own without the rest of the page.</dd>
+            <dt>section</dt>
+            <dd>&lt;section&gt; is similar to &lt;article&gt; but it is more intended for grouping together a part of the page that
+                constitutes<br>one single functionality or a theme. It is best practice to begin each sections with a heading. Depending on
+                the<br>context articles can be split into different sections or sections can be split into different articles.</dd>
+          </dl>
           <dt>sidebar</dt>
-          <dd>Some additional info related to main content. For example if the main content is news then sidebar may include info related to author.
-              <br>Sometimes behaves like a seconday navigation system.</dd>
+          <dd>Provides additional indirect information regarding main content and sometimes behaves like a seconday navigation<br>
+              system. For example if the main content is news then sidebar may include info related to author.</dd>
+          <dd>&lt;aside&gt; is intended HTML tag for side bars. It often placed inside &lt;main&gt;.</dd>
           <dt>footer</dt>
           <dd>A strip across the bottom of the page. Usually contains fine print, copyright, or contact info.</dd>
+          <dd>&lt;footer&gt; is intended HTML tag for footers.</dd>
           <img src="basic-structure.png" alt="Example page" width="750" height="500">
+
+          <dl>If we want to group some elements but can't find a proper semantic wrapper or if we don't want to add any specific meaning
+              then we can use &lt;div&gt; and &lt;span&gt; elements.
+            <dt>span</dt>
+            <dd>&lt;span&gt; is an inline non-semantic element.</dd>
+            <dt>div</dt>
+            <dd>&lt;div&gt; is a block level non-semantic element.</dd>
+          </dl>
+
+          <p>Design steps for a website</p>
+          <ol>
+            <li>Some content such as navbar and footer will be most likely the same throughout pages, so note down what you want to have
+                common to every page.
+            </li>
+            <li>Draw a sketch of each page's structure.</li>
+            <li>Brainstorm all the content that is not common to every page.</li>
+            <li>Group all the content that might live together on different pages.</li>
+            <li>Sketch a sitemap. Have a bubble for each page and draw lines to show the workflow.</li>
+        </ol>
     </body>
 </html>
