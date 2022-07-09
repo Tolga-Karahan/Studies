@@ -1,4 +1,5 @@
     IAM stands for identity and access management. It's a global service. In IAM we create users and assign them to groups. The root account created by default shouldn't be used.  
+    Instead we should create users. After creating user, creating an account alias for the account id is also a convenience because it is hard to remember just numbers.
     Users and groups can be assigned JSON documents called policies which defines what actions users or groups are allowed to do:
 <p align="center"><img src="iam-json.png" width=500 height=500></p>
 
