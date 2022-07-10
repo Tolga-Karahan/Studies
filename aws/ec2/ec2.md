@@ -47,3 +47,57 @@
         - 80: HTTP
         - 443: HTTPS
         - 3389: RDP
+
+    If we need to use AWS services from EC2 instances, we should create roles instead of typing secrets in terminal
+    for configuration which can cause security problems. Because some another user in the same account might get this
+    secrets. We can attach a role to a EC2 instance by using instances page:
+<img src="attaching-role-to-ec2-instance.png" width=750 height=500>
+
+    EC2 Instance Purchasing Options:
+        - On-demand instances: 
+            - short workload
+            - predictable pricing
+            - pay for what you use-
+            - Linux/Windows is billed per seconds, other OS is billed per hour
+
+        - Reserved(1 & 3 years): 
+            - discounted price compared to on-demand
+            - reserving a specific instance attribute such as instance type, region, tenancy, os etc.
+            - Reserved instances: long workloads(database etc)
+            - Convertible reserved instances: long workloads with flexible instances(allow change for example instance type)
+        
+        - Savings plan(1 & 3 years): 
+            - Commitment to a certain type of usage such as $10/hour for one year
+            - usage that is more than the plan is billed at on-demand price
+            - Locked to a specific instance type and AWS region
+            - Long workloads
+            - Instance size, OS and tenancy are flexible
+        
+        - Spot instances: 
+            - Short workloads
+            - Cheap
+            - Instance might be lost anytime if determined max prices is exceeded by current spot price
+            - Suitable for not critical, resilient workloads
+        
+        - Dedicated hosts: 
+            - Booking and access to physical server
+            - Control on instance placement
+            - Capacity fully dedicated to user
+            - Billed on-demand or reserved
+            - Useful to meet regulation and compliance needs
+            - Visibility of low-level hardware such as sockets, cores, host ID
+
+        - Dedicated instances: 
+            - Hardware dedicated to only one user
+            - No control on instance placement
+            - Hardware may shared with other instances in the same account
+
+        - Capacity reservations: 
+            - Reserving pn-demand instance capacity in a specific AZ for any duration
+            - EC2 capacity is always accessible when it is needed
+            - No time commitment, no billing discounts
+            - To benefit from discounts it can be combined with regional reserved instances and Savings Plans
+            - Charging at on-demand no matter instances are running or not
+            - Suitable for short-term, uninterrupted workloads that needs to be in a specific AZ
+
+<img src="purchasing-options-analogy.png" title="an analogy for purchasing options" width=500 height=300>                       
