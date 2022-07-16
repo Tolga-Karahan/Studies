@@ -49,15 +49,15 @@
         - 3389: RDP
 
     If we need to use AWS services from EC2 instances, we should create roles instead of typing secrets in terminal
-    for configuration which can cause security problems. Because some another user in the same account might get this
-    secrets. We can attach a role to a EC2 instance by using instances page:
+    for configuration which can cause security problems, because some another user in the same account might get this
+    secrets. We can attach a role to an EC2 instance by using instances page:
 <img src="attaching-role-to-ec2-instance.png" width=750 height=500>
 
     EC2 Instance Purchasing Options:
         - On-demand instances: 
             - short workload
             - predictable pricing
-            - pay for what you use-
+            - pay for what you use
             - Linux/Windows is billed per seconds, other OS is billed per hour
 
         - Reserved(1 & 3 years): 
@@ -93,7 +93,7 @@
             - Hardware may shared with other instances in the same account
 
         - Capacity reservations: 
-            - Reserving pn-demand instance capacity in a specific AZ for any duration
+            - Reserving on-demand instance capacity in a specific AZ for any duration
             - EC2 capacity is always accessible when it is needed
             - No time commitment, no billing discounts
             - To benefit from discounts it can be combined with regional reserved instances and Savings Plans
