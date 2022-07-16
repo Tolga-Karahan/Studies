@@ -88,9 +88,8 @@
               Enabled with a Lifecycle policy, so whenever a file has no access more
               than specified period, it is moved to efs-ia tier.
 
-        Availability and durability:
+        - Availability and durability:
             - regional:
                 - multi-az: good for prod
                 - one zone: good for development, backup is enabled by default, compatible
-                  with efs-ia.
-                - Great cost savings
+                  with efs-ia. Great cost savings
