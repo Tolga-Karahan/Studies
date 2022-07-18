@@ -67,11 +67,14 @@
     EFS:
         - Stands for Elastic File System
         - It's a managed NFS that can be mounted to multiple EC2 instances in multiple AZs
+          A subnet must be chosen in EC2 instance creation page before attaching an EFS to
+          indicate its AZ.
         - Highly available, scalable and expensive. Scales automatically
         - Pay per use
         - Use cases: content management, web serving, data sharing
         - Only compatible with Linux based AMIs
         - Encryption at rest via KMS
+<img src="efs.png">
         
     EFS modes:
         - Performance mode:
@@ -86,10 +89,20 @@
             - standard: For frequently accessed files
             - infrequent access(efs-ia): Retrieving files are slower, price is lower.
               Enabled with a Lifecycle policy, so whenever a file has no access more
-              than specified period, it is moved to efs-ia tier.
+              than a specified period, it is moved to efs-ia tier.
 
         - Availability and durability:
             - regional:
                 - multi-az: good for prod
-                - one zone: good for development, backup is enabled by default, compatible
-                  with efs-ia. Great cost savings
+                - one zone: good for development, backup is enabled by default, Great
+                  cost savings
+
+    EBS vs EFS:
+      - EBS volumes can be attached to one instance at a time unless multi-attach is
+        used with provisioned iops SSDs. EFS volumes can be mounted to multiple instances
+        throughout different AZs.
+      - EBS volumes are locked to a single AZ. Due to that requires taking snapshot
+        and restoring it at another AZ to migrate content.
+      - EFS is more expensive than EBS(about 3x now).
+      - EFS is charged based on usage, EBS is provisioned in advanced and charged based
+        on provisioned size.
