@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Information regarding responsive images in HTML.">
+        <meta name="author" content="karahantlg@gmail.com">
+        <!--To force mobile browsers to adopt their real viewport width for loading web pages.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Responsive Images</h1>
+        <p>Responsive images are images that work on devices with different screen sizes, resolutions, and other features.</p>
+        <h2>How to create responsive images?</h2>
+        <h3>Resolution switching: Different sizes</h3>
+        <p>
+           srcset and sizes attributes of &lt;img&gt; element can be used to render same image with different resolutions<br>
+           according to the device. srcset attribute contains a set of images and their respective width. sizes attribute<br>
+           defines a set of media conditions for example screen width to determine which image size would be best<br>
+           and along with slot widths to determine the width of the slot the image will fill if the condition is true.<br>
+           Browser go through conditions and gets the first matching by ignoring rest. One without a condition in the<br>
+           end is the default size. If images in srcset doesn't exactly match with the chosen size from sizes attribute<br>
+           than the first bigger one is chosen.
+        </p>
+        <img 
+            srcset="sample-480w.jpg 480w, sample-800w.jpg 800w"
+            sizes="(max-width: 600px) 480px,
+                    800px"
+            src="sample-800w.jpg" 
+            alt="responsive image example" />
+        <h3>Resolution switching: Same size, different resolutions</h3>
+        <p>
+            If multiple resolutions are supported then browser can be allowed to choose an appropriate resolution<br>
+            from srcset attribute. In below example original image which is 320pixels wide is supplied along with 1.5x<br>
+            and 2x resolution ones. Image width specified as 320px via CSS. The browser works out to pick an appropriate<br>
+            one. If for example device has standard/low resolution with one device pixel representing one CSS pixel then<br>
+            the original image is chosen. If device has a high resolution of two device pixels per CSS pixel then 2x one is<br>
+            chosen.
+        </p>
+        <img
+            srcset="example-320w.jpg, example-480w.jpg 1.5x, example-640w.jpg 2x"
+            src="example-640w.jpg"
+            alt="An example image even not exist!" />
+        <h3>Art direction</h3>
+        <p>
+            Art direction problem is changing the image displayed to suit different display sizes. For example a person<br>
+            in the middle of a big landscape image would be hardly visible in a mobile browser. It would be better to<br>
+            show a smaller image that focuses more on the person. This kind of solution can be implemented via<br>
+            &lt;picture&gt; element. &lt;picture&gt; element also has &lt;source&gt; elements inside that provides different sources<br>
+            for the browser to choose one from. &lt;source&gt; element also has a media attribute which defines a media<br>
+            condition and a srcset to pick from one or multiple images. Even sizes attribute also can be added for<br>
+            different resolutions. Inside &lt;picture&gt; element, an &lt;img&gt; element also should be added as a default<br>
+            image in case no condition is true and for the browsers that doesn't support &lt;picture&gt; element.
+        </p>
+        <picture>
+            <source media="(max-width: 799px)" srcset="example-close.jpg" />
+            <source media="(min-width: 800px)" srcset="example.jpg" />
+            <img src="example.jpg" alt="An example image even not exist!" />
+        </picture>
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Images in HTML</title>
+        <meta name="description" content="Contains info regarding HTML images.">
+        <meta name="author" content="karahantlg@gmail.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Images in HTML</h1>
+        <h2>&lt;img&gt; tag</h2>
+        <p>We use &lt;img&gt; tag to put an image on a web page. It's a void element meaning that it can't have any child element and an end tag.<br>
+           It requires at least to attributes to be useful: src and alt. Filenames are also considered by SEO, so it is wise to give meaningful names.<br>
+           There are also some other useful attributes such as width, height and title. width and height as their names imply specify the width<br>
+           and height of the image in case it is not loaded to render an appropriate box. title attribute provides information when user hover<br>
+           cursor over the image. Due to it requires a mouse to hover and accessibility problems with screen readers it is better practice to<br>
+           give information in main text. 
+        </p>
+        <h2>Adding captions</h2>
+        <p>HTML &lt;figure&gt; and &lt;figcaption&gt; tags can be used to create a semantic container for figures and their corresponding captions:</p>
+        <figure>
+            <img 
+            src="../images/dinosaur_small.jpg"
+            alt="The head and torso of a dinosaur skeleton;
+                 it has a large head with long sharp teeth"
+            width="200"
+            height="171"/>
+
+            <figcaption>
+                A T-Rex on display in the Machester University Museum.
+            </figcaption>
+        </figure>
+        <p>A figure doesn't have to be only an image it might be multiple images, a code snippet, audio, video, equations, a table etc...</p>
+        <p>If image has no meaning and it is only for decoration then CSS background images can be used:<br>
+            p {<br>
+                background-image: url("images/dinosaur.jpg");<br>
+              }
+        </p>
+        <script src="" async defer></script>
+    </body>
+</html>
