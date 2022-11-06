@@ -1,0 +1,42 @@
+h1 {
+    color: red;
+}
+
+/* li.special selector only applies rules to elements
+whose class is special and under list element  */
+.special {
+    color: orange;
+    font-weight: bald;
+}
+
+li em {
+    color: rebeccapurple;
+}
+
+p + p {
+    color: blue
+}
+
+p span{
+    color: red;
+}
+
+/* Makes unvisited links yellow. */
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: green;
+}
+
+/* Remove underline while
+link is  being hovered. */
+a:hover {
+    text-decoration: none;
+    font-size: 150%;
+}
+
+body h1 + p span {
+    font-weight: bolder;
+}
