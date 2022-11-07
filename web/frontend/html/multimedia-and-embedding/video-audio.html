@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Information regarding audio and video multimedia in HTML">
+        <meta name="author" content="karahantlg@gmail.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Audio and video in HTML</h1>
+        <h2>The &lt;video&gt; element</h2>
+        <video src="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/rabbit320.webm" controls>
+            <p>
+                Your browser doesn't support the HTML video feature. Here is a
+                <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/rabbit320.webm"> link of the video instead.</a>
+            </p>
+        </video>
+        <p>
+           Lets explain the attributes in &lt;video&gt; tag. src is same as it is in &lt;img&gt; tag, it points to the<br>
+           multimedia source. controls attribute is to provide controls such as play, pause, adjusting<br>
+           volume to the user. Paragraph inside the &lt;video&gt; element is fallback content to show<br>
+           info in this case a link to the video in case browser doesn't support HTML video element.
+        </p>
+        <p>&lt;source&gt; element can be used to provide various container formats or codecs for<br>
+           compatibility inside video element by removing src attributes. In this case browser will<br>
+           go through the source elements and play the first one that has the codec support.</p>
+        <video controls>
+            <source src="rabbit320.mp4" type="video/mp4"/>
+            <source src="rabbit320.webm" type="video/webm"/>
+            <p>
+                Your browser doesn't support the HTML video feature. Here is a
+                <a href="https://mdn.github.io/learning-area/html/multimedia-and-embedding/video-and-audio-content/rabbit320.webm"> link of the video instead.</a>
+            </p>
+        </video>
+        <h2>The &lt;audio&gt; element</h2>
+        <audio controls>
+            <source src="viper.mp3" type="audio/mp3"/>
+            <source src="viper.ogg" type="audio/mp3"/>
+            <p>
+                Your browser doesn't support this audio file. Here is a <a href="viper.mp3">link to the audio</a> instead.
+            </p>
+        </audio>
+        <h2>Text tracks</h2>
+        <p>
+           Text tracks are useful for example if language of the audio is not known by the user,<br>
+           playing audio is not allowed or in case of impairments. WebVTT file format and &lt;track&gt;<br>
+           element can be used to add text tracks. 
+        </p>
+        <p>WebVTT is a format for writing text files along with metadata such as time in the video<br>
+           at which each text should be displayed. These text strings are called cues and there are<br>
+           several kinds of cues:
+        </p>
+        <dl>
+            <dt>subtitles</dt>
+            <dd>Translations for the people whose doesn't known the spoken language.</dd>
+            <dt>captions</dt>
+            <dd>
+                Synchronized transcriptions of dialogs or descriptions of the sounds for the people<br>
+                who has hearing issues.
+            </dd>
+            <dt>timed descriptions</dt>
+            <dd>Text which should be spoken by the media player for people who has seeing issues.</dd>
+        </dl>
+        <p>
+            An example WEBVTT file is as below:<br>
+            <img src="../images/example-webvtt-file.png" alt="WEBVTT file example">    
+        </p>
+        <p>WEBVTT file should be linked in audio/video element with track element after source elements.</p>
+        <video controls>
+            <source src="example.mp4" type="video/mp4">
+            <source src="example.webm" type="video/webm">
+            <track kind="subtitles" src="tr-subtitles.vtt" srclang="tr" label="Turkish"/>
+        </video>
+        <script src="" async defer></script>
+    </body>
+</html>
