@@ -9,7 +9,7 @@
     If we want to apply same rules to various elements then we can use class selector to give class to these elements or we
     can use id to specifically style one instance of an element.
     
-    If we want to apply rules to a subset of same element then one option using element selector and class selector together.
+    If we want to apply rules to a subset of same element then one option is using element selector and class selector together.
     For example if we want to style all list elements that have class special then we can use such a selector: li.special.
     Similar case is selecting elements under another element. To accomplish it we can use descendant combinators. For example
     to select all em elements under li elements: li em. 
