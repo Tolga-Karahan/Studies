@@ -24,3 +24,18 @@ h3 {
     color: yellow;
 }
 
+.link_list {
+    color: green;
+}
+
+.link1 a {
+    color: inherit;
+}
+
+.link2 a {
+    color: initial;
+}
+
+.link3 a {
+    color: unset;
+}
