@@ -4,12 +4,12 @@
 
 ## Selectors
     There are CSS selectors to grab elements for styling such as element selector, class selector, id selector so on. Element
-    selector selects and HTML element and apply rules defined for it. 
+    selector selects an HTML element and apply rules defined for it. 
     
-    If we want to apply same rules to various elements then we can use class selector to give class to these elements or we
-    can use id to specifically style one instance of an element.
+    If we want to apply same rules to various elements then we can use class selector by giving a class to these elements or
+    we can use id to specifically style one instance of an element.
     
-    If we want to apply rules to a subset of same element then one option using element selector and class selector together.
+    If we want to apply rules to a subset of same element then one option is using element selector and class selector together.
     For example if we want to style all list elements that have class special then we can use such a selector: li.special.
     Similar case is selecting elements under another element. To accomplish it we can use descendant combinators. For example
     to select all em elements under li elements: li em. 
@@ -21,7 +21,7 @@
     <a> element has different states that depend on whether link is visited or unvisited, hovered over, focused via keyboard,
     or activated. For example to style links that is visited before: a:visited.
 
-    CSS cascade and specifity rules applies when there are multiple rules that targets same element. If specificity of the
+    CSS cascade and specificity rules applies when there are multiple rules that targets same element. If specificity of the
     selectors are same, for example two p element selectors in the same file, then latest one applies which is called cascade.
     In other cases one with more specifity applies no matter where it is defined in stylesheet.
 
