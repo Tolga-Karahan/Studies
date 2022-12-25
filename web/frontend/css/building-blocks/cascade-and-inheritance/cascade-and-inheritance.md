@@ -125,7 +125,8 @@
 
         - initial: Sets value of property to its initial value.
 
-        - revert: Resets the property value to the browser's default styling.
+        - revert: Resets the property value to the browser's default styling. Acts
+        like unset in many cases.
 
         - revert-layer: Resets the property value to the value established in previous
         cascade layer.
