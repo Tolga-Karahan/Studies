@@ -33,7 +33,7 @@
 
     2 - Inner display type
             Inner display type determines how elements inside the box are laid out.
-        It can be changed via display property. It doesn't have effect on outer display type.
+        It can be changed via display property.
 
 ## Examples
         There are three block level elements in the example below. Paragraph has outer display type of block. It extends to the entire available width. List is also type of block. It means that it also extends to the entire width of the container, but in the example display of the inner elements are changed. span is an inline element, but its child can be displayed as a block element.
@@ -57,3 +57,35 @@
 </ul>
 <p class="inline">A paragraph that behaves as an inline element.</p>
 <p class="inline">Another paragraph that behaves as an inline element.</p>
+
+## CSS Box Model
+        CSS box model applies to block boxes as a whole while it partially applies to inline boxes. It define how margin, border, padding and content work together to create a box.
+
+<img src="box-model.png">
+
+        Content box is the area where the content is displayed. It can be sized by inline-size, block-size, width and height.
+
+        Padding box is the space around the content. Sized by padding property.
+
+        Border box wraps all the content and padding. It is configured via border and related properties.
+
+        Margin box is the space between this box and other elements. Configured via margin and related properties.
+
+        inline-size, block-size, width and height properties determine the size of the content. Space taken up by the box is calculated by considering padding and border in addition to content size. Margin is not counted towards the size of the box, box ends in borders. It's called standard CSS box model.
+
+<img src="standard-css-box-model.png">
+
+        There is also alternative CSS box model. In alternative model, width is the width of the whole visible box on the screen not just width of the content box. Content area width is calculated as width-2xborder-2xpadding.
+
+<img src="alternative-css-box-model.png">
+
+        To use the alternative box model, box-sizing property on the html element must be border-box and all other elements must inherit it.
+
+        html {
+            box-sizing: border-box;
+        }
+        *,
+        *::before,
+        *::after {
+        box-sizing: inherit;
+        }
