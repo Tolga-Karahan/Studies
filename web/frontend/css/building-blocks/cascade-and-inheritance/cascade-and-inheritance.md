@@ -117,7 +117,7 @@
     <p id="p_color">Defines its own color.</p>        
 </div>
 
-    Default inheritance behaviour can be changes by using special property values to
+    Default inheritance behaviour can be changed by using special property values to
     control inheritance:
 
         - inherit: Sets selected element's property value to the parent's value for
