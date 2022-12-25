@@ -4,10 +4,10 @@
 
 ## Selectors
     There are CSS selectors to grab elements for styling such as element selector, class selector, id selector so on. Element
-    selector selects and HTML element and apply rules defined for it. 
+    selector selects an HTML element and apply rules defined for it. 
     
-    If we want to apply same rules to various elements then we can use class selector to give class to these elements or we
-    can use id to specifically style one instance of an element.
+    If we want to apply same rules to various elements then we can use class selector by giving a class to these elements or
+    we can use id to specifically style one instance of an element.
     
     If we want to apply rules to a subset of same element then one option is using element selector and class selector together.
     For example if we want to style all list elements that have class special then we can use such a selector: li.special.
