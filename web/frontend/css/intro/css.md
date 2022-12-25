@@ -21,7 +21,7 @@
     <a> element has different states that depend on whether link is visited or unvisited, hovered over, focused via keyboard,
     or activated. For example to style links that is visited before: a:visited.
 
-    CSS cascade and specifity rules applies when there are multiple rules that targets same element. If specificity of the
+    CSS cascade and specificity rules applies when there are multiple rules that targets same element. If specificity of the
     selectors are same, for example two p element selectors in the same file, then latest one applies which is called cascade.
     In other cases one with more specifity applies no matter where it is defined in stylesheet.
 
