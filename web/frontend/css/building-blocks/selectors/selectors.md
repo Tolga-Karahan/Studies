@@ -21,7 +21,7 @@
     example if they are the first element of their type. For example hover is a
     pseudo-class and can be used to style when user hovers on an element: a:hover. This
     type of pseudo-classes are called user-action or dynamic pseudo class because it is
-    like a class in added to the element when user interacts with the element. Another
+    like a class is added to the element when user interacts with the element. Another
     example is selecting the first paragraph of an article element: article p:first-child.
     :first-child or *:first-child is corresponding to any element that is first child.
     
