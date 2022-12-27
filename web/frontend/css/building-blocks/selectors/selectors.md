@@ -10,18 +10,18 @@
         - p[class^="value"]: If attribute starts with value.
         - p[class$="value"]: If attribute ends with value.
         - p[class*="value"]: If attribute contains value inside.
-        - p[class~="value"]: If attribute is exactly value or contains it in space
-        seperated list of values. For example if class attribute is like:
-        class="abc value def".
-        - p[class|="value"]: If attribute is exactly value or begins with value
-        immediately followed by a hyphen. 
+        - p[class~="value"]: If attribute is equals to the value or
+        contains it in space seperated list of values. For example
+        if class attribute is like: class="abc value def".
+        - p[class|="value"]: If attribute is equals to the value or
+        begins with value immediately followed by a hyphen. 
 
 ### Pseudo-classes and pseudo-elements
     Pseudo-classes select elements that are in a specific state of the element or for
     example if they are the first element of their type. For example hover is a
     pseudo-class and can be used to style when user hovers on an element: a:hover. This
     type of pseudo-classes are called user-action or dynamic pseudo class because it is
-    like a class in added to the element when user interacts with the element. Another
+    like a class is added to the element when user interacts with the element. Another
     example is selecting the first paragraph of an article element: article p:first-child.
     :first-child or *:first-child is corresponding to any element that is first child.
     
@@ -45,7 +45,7 @@
     that are inside an element whose class is box: .box p.
 
     Child combinator: Used to target direct child elements of an element. For example to
-    target all paragraphs that are direct children of a article element: article > p.
+    target all paragraphs that are direct children of an article element: article > p.
 
     Adjacent sibling combinator: Selects last element in the selector if it is next sibling
     element of the previous one. For example to target paragprahs that are immediately 

@@ -94,12 +94,12 @@
 <h3 class="cascade_example">Cascade example</h1>
 
 ## Specificity
-    Specificity is the algorithm that browsers use to decide which value of a property is
-    applied to an element. If same property of the element is configured by multiple style
-    blocks that are using different selectors, specificity decides the value that will be
+    Specificity is the algorithm that browsers use to decide which rules is applied to
+    an element. If same property of the element is configured by multiple style blocks
+    that are using different selectors, specificity decides the value that will be
     assigned to the property. It is a measure of the level of specificity of selectors.
-    For example an element selector selects all same elements on a page, so it is less
-    specific and has less weight comparing to a class selector which selects only the 
+    For example element selector selects all same elements on a page, so it is less
+    specific and has less weight comparing to a class selector which selects only the
     elements that have same class attribute value.
 
 <h3 class="specificity_example">Specificity example</h1>
@@ -117,7 +117,7 @@
     <p id="p_color">Defines its own color.</p>        
 </div>
 
-    Default inheritance behaviour can be changes by using special property values to
+    Default inheritance behaviour can be changed by using special property values to
     control inheritance:
 
         - inherit: Sets selected element's property value to the parent's value for
@@ -125,7 +125,8 @@
 
         - initial: Sets value of property to its initial value.
 
-        - revert: Resets the property value to the browser's default styling.
+        - revert: Resets the property value to the browser's default styling. Acts
+        like unset in many cases.
 
         - revert-layer: Resets the property value to the value established in previous
         cascade layer.
