@@ -89,3 +89,23 @@
         *::after {
         box-sizing: inherit;
         }
+
+## Margin, Border, and Padding
+        Margin: Margin is invisible space between the box and other elements. It can take positive or negative values. Negative margin can
+        cause the box to overlap with other content on the page. Margins of adjacent boxes collapse. If both are positive then the largest
+        one is used, if both are negative then the smallest one is used. If one is negative and other is positive then sum of them is used.
+
+        Border: It is drawn between padding and margin. 
+
+        Padding: It is between the border and the content area and used to push content away from the border. Unlike margin, it can't have
+        negative value. Any applied background appears behind the padding.
+
+## Display: inline-block
+        display: inline-block makes an element to exhibit behaviour in the middle of inline and block types. It doesn't break into a new
+        line, but its width, height properties are respected and its margin, border and padding properties push other elements away. It
+        is quite common to allow padding in a link so that users can click it in easier way for example in navbars.
+
+<p>
+    I am a paragraph and this is a <span id="inline-block-example">span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+</p>     
+    
