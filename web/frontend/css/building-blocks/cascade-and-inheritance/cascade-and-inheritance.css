@@ -1,0 +1,41 @@
+h3.cascade_example {
+    color: blue;
+}
+
+h3.cascade_example {
+    color: red;
+}
+
+
+
+h3.specificity_example {
+    color: yellow;
+}
+
+h3 {
+    color:red;
+}
+
+#inheritance_div {
+    color: red;
+}
+
+#p_color {
+    color: yellow;
+}
+
+.link_list {
+    color: green;
+}
+
+.link1 a {
+    color: inherit;
+}
+
+.link2 a {
+    color: initial;
+}
+
+.link3 a {
+    color: unset;
+}

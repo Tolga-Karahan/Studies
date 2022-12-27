@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HTML Advanced Text</title>
+        <meta name="description" content="Information about advanced text capabilities in HTML">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Advanced text in HTML</h1>
+        <p>There is also a third type of list in HTML which is called description lists. Description lists are used in cases in which a set of items and their descriptions are shown.<br>
+           For example terms and definitions or Q/A. We can use multiple description per item.</p>
+        <dl>
+            <dt>Unordered list</dt>
+            <dd>A list consists of elements whose order doesn't matter.</dd>
+            <dt>Ordered list</dt>
+            <dd>A list consists of elements whose order does matter.</dd>
+            <dt>Description list</dt>
+            <dd>A list consists of items and their descriptions as it is the case with this one.</dd>
+            <dd>Though it is not frequent as previous ones.</dd>
+        </dl>
+
+        <p>To quote some block level content, we should use &lt;blockquote&gt; element to indicate this and we should include a url that is pointing to source of the quote inside<br>
+           cite attribute. Browser will put quoted content inside an indented paragraph by default:</p>
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+            <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+               Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>                
+        </blockquote>
+
+        <p>Inline quotations also works in the same way but they use &lt;q&gt; element to quote content:</p>
+        <p>The quote element &lt;q&gt; is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">intended for short quotations that don't require paragraph breaks.</q></p>
+        <p>cite attribute is not considered by browsers, so to make it appear on the page we should add via other means such as html, css or javascript.</p>
+        <p>There is also a &lt;cite&gt; tag which is used to contain title of the quoted source.</p>
+        <p>The quote element &lt;q&gt; is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">intended for short quotations that don't require paragraph breaks.</q>
+           According to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"><cite>MDN q page</cite></a>.</p>
+
+        <p>&lt;abbr&gt; element is for putting abbreviations inside and giving expansion in title attribute.</p> 
+        <p>We use <abbr title="Hyper Text Markup Language">HTML</abbr> to structure our web page.</p>
+
+        <p>&lt;address&gt; element is used to give contact information for a person.</p>
+
+        <p>For superscript and subscript we use &lt;sup&gt; and &lt;sub&gt; tags respectively. Today is: 8<sup>th</sup> of July 2021. Caffeine's formula is:
+           C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+        </p>
+
+        <dl>There are also some tags which are useful for representing computer code:
+            <dt>&lt;code&gt;</dt>
+            <dd>For marking up computer code.</dd>
+            <dt>&lt;pre&gt;</dt>
+            <dd>For preserving spaces in HTML as is otherwise they are just ignored from the browser.</dd>
+            <dt>&lt;var&gt;</dt>
+            <dd>For specifically marking up variable names.<dd>
+            <dt>&lt;kbd&gt;</dt>
+            <dd>For marking up keyboard or any other type of input entered into computer.</dd>
+            <dt>&lt;samp&gt;</dt>
+            <dd>For marking up the output of a computer program.</dd>
+        </dl>
+
+        <p>There are multiple ways of writing dates, but computers might not be able to recognize each one. To indicate that it's a date we use &lt;time&gt; tag. 
+           By doing so we<br>can easily grab all dates in a page.</p>
+        <time datetime="2022-07-08">08 July 2022</time>
+    </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="Information regarding HTML tables.">
+        <meta name="author" content="karahantlg@gmail.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="minimal-table.css" type="text/css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Tables</h1>
+        <p>
+           Tables are useful to structure data and HTML also has some elements and attributes for<br>
+           tables.
+        </p>
+        <h2>Sample Table</h2>
+        <table>
+            <tr>
+              <td>&nbsp;</td>
+              <th>Knocky</th>
+              <th>Flor</th>
+              <th>Ella</th>
+              <th>Juan</th>
+            </tr>
+            <tr>
+              <th>Breed</th>
+              <td>Jack Russell</td>
+              <td>Poodle</td>
+              <td>Streetdog</td>
+              <td>Cocker Spaniel</td>
+            </tr>
+            <tr>
+              <th>Age</th>
+              <td>16</td>
+              <td>9</td>
+              <td>10</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>Owner</th>
+              <td>Mother-in-law</td>
+              <td>Me</td>
+              <td>Me</td>
+              <td>Sister-in-law</td>
+            </tr>
+            <tr>
+              <th>Eating Habits</th>
+              <td>Eats everyone's leftovers</td>
+              <td>Nibbles at food</td>
+              <td>Hearty eater</td>
+              <td>Will eat till he explodes</td>
+            </tr>
+          </table>
+          <h2>colspan and rowspan attributes</h2>
+          <p>colspan and rowspan attributes can be used to make a cell span multiple columns or rows.</p>
+          <table>
+            <tr>
+                <th colspan="2">Animals</th>
+            </tr>
+            <tr>
+                <th colspan="2">Hippopotamus</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Horse</th>
+                <td>Mare</td>
+            </tr>
+            <tr>
+                <td>Stallion</td>
+            </tr>
+            <tr>
+                <th colspan="2">Crocodile</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Chicken</th>
+                <td>Hen</td>
+            </tr>
+            <tr>
+                <td>Rooster</td>
+            </tr>
+          </table>
+          <h2>&lt;col&gt; and &lt;colgroup&gt; elements</h2>
+          <p>
+            &lt;col&gt; and &lt;colgroup&gt; elements are used to style an entire column at once. After opening table<br>
+            tag, we can add a colgroup element in which contains col elements for each column to style each<br>
+            column. Also, we can use span attribute of col element to apply same styling to multiple columns.
+          </p>
+          <table>
+            <colgroup>
+              <col>
+              <col style="background-color: red">
+            </colgroup>
+            <tr>
+              <th>Data 1</th>
+              <th>Data 2</th>
+            </tr>
+            <tr>
+              <td>Samsun</td>
+              <td>Red</td>
+            </tr>
+            <tr>
+              <td>Metal Music</td>
+              <td>Computer Science</td>
+            </tr>
+          </table>
+          <h2>Adding captions</h2>
+          <p>
+            Captions can be added to table via &lt;caption&gt; element to give a description for the table which is<br>
+            useful for users and people with visual impairments. Instead of reading or listening table content<br>
+            from screen reader, users can have an idea regarding table's data about what.
+          </p>
+          <table>
+            <caption>
+              Test table.
+            </caption>
+            <tr>
+              <th>Col1</th>
+              <th>Col2</th>
+            </tr>
+            <tr>
+              <td>Cell1</td>
+              <td>Cell2</td>
+            </tr>
+          </table>
+          <h2>Adding structure</h2>
+          <p>
+             As tables get more complex, it is useful to add more structure to them by using &lt;thead&gt;<br>
+             &lt;tfoot&gt; and &lt;tbody&gt; elements. These elements doesn't improve table visually nor provide<br>
+             more accessibility for screen readers, but they are useful for styling and layout. For example<br>
+             if table is too long then table header and footer can be repeated on every page and table<br>
+             body can be displayed on a single page also by adding scrolling up and down.
+          </p>
+          <table>
+            <caption>How I chose to spend my money</caption>
+              <thead>
+                <tr>
+                  <th>Purchase</th>
+                  <th>Location</th>
+                  <th>Date</th>
+                  <th>Evaluation</th>
+                  <th>Cost (€)</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <td colspan="4">SUM</td>
+                  <td>118</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Haircut</td>
+                  <td>Hairdresser</td>
+                  <td>12/09</td>
+                  <td>Great idea</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>Lasagna</td>
+                  <td>Restaurant</td>
+                  <td>12/09</td>
+                  <td>Regrets</td>
+                  <td>18</td>
+                </tr>
+                <tr>
+                  <td>Shoes</td>
+                  <td>Shoeshop</td>
+                  <td>13/09</td>
+                  <td>Big regrets</td>
+                  <td>65</td>
+                </tr>
+                <tr>
+                  <td>Toothpaste</td>
+                  <td>Supermarket</td>
+                  <td>13/09</td>
+                  <td>Good</td>
+                  <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Accessibility</h2>
+            <p>
+              We make associations between rows and columns of a table to understand underlying<br>
+              data, but it is not as easy for people who have visual impairments as people who don't.<br>
+              Screen readers identify all headers and use them to make programmatic associations<br>
+              between headers and the cells they relate to. There also some useful elements and<br>
+              attributes for accessibility.
+            </p>
+            <dl>
+              <dt>scope attribute</dt>
+              <dd>
+                  scope attribute in &lt;th&gt; element tells screen reader for which cells the header<br>
+                  is header for. Is it a header for a row or a column? It allows screen readers to read<br>
+                  entire column or row at once. For example if the header is a header for the<br>
+                  column: &lt;th scope="col"&gt;header1&lt;/th&gt; If header spans multiple rows or columns<br>
+                  then rowgroup or colgroup values must be used.<br>
+              </dd>
+              <dt>Alternative way to scope is using id and header attributes.</dt>
+              <dd>
+                  Each header define a unique id and each &lt;td&gt; element defines their headers in<br>
+                  headers attribute.
+              </dd>
+            </dl>
+        <script src="" async defer></script>
+    </body>
+</html>
