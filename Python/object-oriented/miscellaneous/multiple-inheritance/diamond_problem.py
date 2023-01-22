@@ -12,6 +12,8 @@ class LeftSubClass(BaseClass):
     n_left_sub_calls = 0
 
     def call_me(self):
+        # super() is used to prevent
+        # calling base class twice.
         super().call_me()
         # BaseClass.call_me(self)
         print("Left sub class is called!")
