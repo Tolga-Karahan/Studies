@@ -45,6 +45,7 @@ class Contact:
     def __repr__(self):
         return f"Contact({self.name}, {self.email})"
 
+
 class Friend(Contact, MailSender, AddressHolder):
     # '/' special parameter can be put between
     # positional and keyword argument to separate
@@ -62,8 +63,8 @@ class Friend(Contact, MailSender, AddressHolder):
         are absracted out in kwargs, complete list
         of arguments are not apparent for users.
         These arguments should be stated in docstring
-        to make it apparent for users. In general, 
-        composition should be preferred over 
+        to make it apparent for users. In general,
+        composition should be preferred over
         inheritance.
 
         Args:
@@ -75,7 +76,7 @@ class Friend(Contact, MailSender, AddressHolder):
             state (str): State name.
             code (str): Code of the place.
         """
-    
+
         super().__init__(**kwargs)
         self.phone = phone
 
@@ -90,7 +91,7 @@ o1 = Friend(
     street="fake_street",
     city="fake_city",
     state="fake_state",
-    code="fake_code"
+    code="fake_code",
 )
 print(o1.contacts)
 o1.send_mail("Hey")
