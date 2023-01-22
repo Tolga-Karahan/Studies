@@ -38,7 +38,7 @@ class Contact:
     contacts = ContactList()
 
     def __init__(self, name: str, email: str, **kwargs: Any) -> None:
-        super().__init__(**kwargs) # type: ignore [call-arg]
+        super().__init__(**kwargs)  # type: ignore [call-arg]
         self.name = name
         self.email = email
         Contact.contacts.append(self)
@@ -78,7 +78,7 @@ class Friend(Contact, MailSender, AddressHolder):
             code (str): Code of the place.
         """
 
-        super().__init__(**kwargs) # type: ignore [call-arg]
+        super().__init__(**kwargs)  # type: ignore [call-arg]
         self.phone = phone
 
     def __repr__(self):
