@@ -15,7 +15,8 @@ from containers import ContactList
 # classes for our mixin classes. Thanks to
 # Python's duck typing, there is no need to
 # explicitly inheriting this Protocol class,
-# but it is better in terms of readability.
+# but it would be useful for readability
+# and also to inform tools such as mypy.
 # Duck typing means, type is determined by
 # behaviours and properties instead of
 # explicit type of the object. If it walks
