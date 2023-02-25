@@ -141,3 +141,13 @@
     <li class="link3">Unset <a href="#">link</a></li>
     <li class="link4">Revert <a href="#">link</a></li>
 </ul>
+
+    Inline styles always take precedence over all other styles. One exception is using !important  flag. It makes a property-value pair the most specific rule. It shouldn't
+    be used unless really necessary due to it changes the way cascade normally works.
+
+## The effect of CSS location
+    Precedence of CSS also depends on what stylesheet and cascade layer it is specified in.
+
+    CSS can be organized in cascade layers. Later layers take precedence over previous layers. CSS styles declared outside of any layer are combined into an unnamed layer and this layer behaves like a last layer. This order can be reversed by using !important flag in a way that important styles in previous layers take precedence over important styles in later layers.
+
+<p id="layer-example">Layer Example</p>
