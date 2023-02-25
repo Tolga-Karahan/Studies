@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="cascade-and-inheritance.css">
 
-## Cascade
+## Cascade, specificity, and inheritance
     Stylesheets have cascading structure. It means that the origin, the cascade layer, and
     the order of the CSS rules matter. If two rules from the same cascade layer applies to
-    same element and if they have same specificity then the one that is defined last has
+    same element and if they have same specificity then the one that is defined last takes
     effect. 
 
     There are three factors ordered in increasing importance:
@@ -91,7 +91,7 @@
     </tbody>
 </table>
 
-<h3 class="cascade_example">Cascade example</h1>
+<h3 class="order_example">Order example</h1>
 
 ## Specificity
     Specificity is the algorithm that browsers use to decide which rules is applied to
@@ -139,5 +139,5 @@
     <li class="link1">Inherit <a href="#">link</a></li>
     <li class="link2">Initial <a href="#">link</a></li>
     <li class="link3">Unset <a href="#">link</a></li>
+    <li class="link4">Revert <a href="#">link</a></li>
 </ul>
-
