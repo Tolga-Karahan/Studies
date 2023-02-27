@@ -37,6 +37,6 @@ a:hover {
     font-size: 150%;
 }
 
-body h1 + p span {
+body h1 + p strong {
     font-weight: bolder;
 }
