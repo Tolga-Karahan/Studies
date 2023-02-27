@@ -1,10 +1,23 @@
 <link rel="stylesheet" href="cascade-and-inheritance.css">
 
-## Cascade
+## Cascade, specificity, and inheritance
     Stylesheets have cascading structure. It means that the origin, the cascade layer, and
     the order of the CSS rules matter. If two rules from the same cascade layer applies to
-    same element and if they have same specificity then the one that is defined last has
-    effect. 
+    same element and if they have same specificity then the one that is defined last takes
+    effect.
+
+    There are three cascade origin types: user-agent stylesheets, user stylesheets, and author stylesheets. For each origin, there are two buckets for important and normal rules. In the end, there are six origin buckets. Rules are sorted by cascade layer in these origin importance buckets. Finally, specificity and order applies. There are eight levels of precedence: the six buckets, and properties that are transitioning, and properties that are animating. Their precedence staring from the lowest precedence is as below:
+
+        1. user-agent normal styles
+        2. user normal styles
+        3. author normal styles
+        4. styles being animated
+        5. author important styles
+        6. user important styles
+        7. user-agent important styles
+        8. styles being transitioning
+
+    Specifity for rules from different origins and layers is not compared.
 
     There are three factors ordered in increasing importance:
         1. Source order
@@ -91,7 +104,7 @@
     </tbody>
 </table>
 
-<h3 class="cascade_example">Cascade example</h1>
+<h3 class="order_example">Order example</h1>
 
 ## Specificity
     Specificity is the algorithm that browsers use to decide which rules is applied to
@@ -139,5 +152,15 @@
     <li class="link1">Inherit <a href="#">link</a></li>
     <li class="link2">Initial <a href="#">link</a></li>
     <li class="link3">Unset <a href="#">link</a></li>
+    <li class="link4">Revert <a href="#">link</a></li>
 </ul>
 
+    Inline styles always take precedence over all other styles. One exception is using !important  flag. It makes a property-value pair the most specific rule. It shouldn't
+    be used unless really necessary due to it changes the way cascade normally works.
+
+## The effect of CSS location
+    Precedence of CSS also depends on what stylesheet and cascade layer it is specified in.
+
+    CSS can be organized in cascade layers. Later layers take precedence over previous layers. CSS styles declared outside of any layer are combined into an unnamed layer and this layer behaves like a last layer. This order can be reversed by using !important flag in a way that important styles in previous layers take precedence over important styles in later layers.
+
+<p id="layer-example">Layer Example</p>
