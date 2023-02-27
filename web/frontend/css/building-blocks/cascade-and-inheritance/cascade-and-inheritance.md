@@ -4,7 +4,20 @@
     Stylesheets have cascading structure. It means that the origin, the cascade layer, and
     the order of the CSS rules matter. If two rules from the same cascade layer applies to
     same element and if they have same specificity then the one that is defined last takes
-    effect. 
+    effect.
+
+    There are three cascade origin types: user-agent stylesheets, user stylesheets, and author stylesheets. For each origin, there are two buckets for important and normal rules. In the end, there are six origin buckets. Rules are sorted by cascade layer in these origin importance buckets. Finally, specificity and order applies. There are eight levels of precedence: the six buckets, and properties that are transitioning, and properties that are animating. Their precedence staring from the lowest precedence is as below:
+
+        1. user-agent normal styles
+        2. user normal styles
+        3. author normal styles
+        4. styles being animated
+        5. author important styles
+        6. user important styles
+        7. user-agent important styles
+        8. styles being transitioning
+
+    Specifity for rules from different origins and layers is not compared.
 
     There are three factors ordered in increasing importance:
         1. Source order
