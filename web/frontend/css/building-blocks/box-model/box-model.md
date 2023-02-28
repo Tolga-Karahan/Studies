@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="box-model.css" type="text/css">
 
 ## The Box Model
-        Everything in CSS has a box around it. There are mainly two types of boxes: block boxes and inline boxes. 
+        Everything in CSS has a box around it. There are mainly two types of boxes: block boxes and inline boxes.
 
 ## Block and Inline Boxes
         These type distinction is based on how box behaves in terms of page flow and how
@@ -33,10 +33,15 @@
 
     2 - Inner display type
             Inner display type determines how elements inside the box are laid out.
-        It can be changed via display property.
+            It can be changed via display property. display property can change inner display as well as the outer display depending on what value is
+            used.  For example just using flex only lays outs inner elements in flex layout and doesn't change   the outer display type of the element.
+            It is not the case if inline-flex is used which causes outer display to be changed as well. By default elements inside a box are laid out
+            in normal flow.
 
 ## Examples
-        There are three block level elements in the example below. Paragraph has outer display type of block. It extends to the entire available width. List is also type of block. It means that it also extends to the entire width of the container, but in the example display of the inner elements are changed. span is an inline element, but its child can be displayed as a block element.
+        There are three block level elements in the example below. Paragraph has outer display type of block. It extends to the entire available width.
+        List is also type of block. It means that it also extends to the entire width of the container, but in the example display of the inner elements
+        are changed. span is an inline element, but its child can be displayed as a block element.
 
 <p class="block-example">
     Paragraphs are block elements! Take a look to its border and how it extends to full extend of its container.
@@ -107,5 +112,11 @@
 
 <p>
     I am a paragraph and this is a <span id="inline-block-example">span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
-</p>     
-    
+</p>
+<nav>
+    <ul class="navbar-list">
+        <li><a>Link One</a></li>
+        <li><a>Link Two</a></li>
+        <li><a>Link Three</a></li>
+    </ul>
+</nav>
