@@ -6,7 +6,7 @@
 ## Block and Inline Boxes
         These type distinction is based on how box behaves in terms of page flow and how
     it interacts with other boxes. By default, elements inside a box are laid out in normal
-    flow and behave as block on inline boxes. Boxes also have an inner display type and outer display type. It can be set by using display property.
+    flow and behave as block or inline boxes. Boxes also have an inner display type and outer display type. It can be set by using display property.
 
     1 - Outer display type
             If a box has an outer display type of block:
