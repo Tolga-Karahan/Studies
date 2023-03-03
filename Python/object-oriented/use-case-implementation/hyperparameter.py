@@ -1,5 +1,6 @@
 import weakref
 
+
 class Hyperparameter:
     """Hyperparameter class that represents k-parameter
     and associated accuracy.

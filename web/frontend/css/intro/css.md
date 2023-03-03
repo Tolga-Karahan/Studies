@@ -15,7 +15,7 @@
     to select all em elements under li elements: li em. 
     
     A different case is applying rules to elements which come after another element in the hierarchy. For example applying
-    rules to paragraphs that come after a h1 in the same hierarchy: h1 + p. It is called adjacent combinator.
+    rules to the paragraph that just come after a h1 in the same hierarchy: h1 + p. It is called adjacent combinator.
 
     Elements also can be styled based on their state. To do that we need to select elements based on their state. For example
     <a> element has different states that depend on whether link is visited or unvisited, hovered over, focused via keyboard,

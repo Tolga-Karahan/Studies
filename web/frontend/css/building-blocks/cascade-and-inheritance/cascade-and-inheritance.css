@@ -1,19 +1,20 @@
-h3.cascade_example {
+/* This declaration determines the order of the layers. */
+@layer firstLayer;
+
+h3.order_example {
     color: blue;
 }
 
-h3.cascade_example {
+h3.order_example {
     color: red;
 }
-
-
 
 h3.specificity_example {
     color: yellow;
 }
 
 h3 {
-    color:red;
+    color:purple;
 }
 
 #inheritance_div {
@@ -38,4 +39,24 @@ h3 {
 
 .link3 a {
     color: unset;
+}
+
+.link4 a {
+    color: revert;
+}
+
+#layer-example {
+    color: red;
+    border: 5px solid black;
+}
+
+@layer firstLayer {
+    #layer-example {
+        /* Important styles in previous layers
+        take precedence. */
+        color: magenta !important;
+        /* Non-important styles in later layers
+        take precedence. */
+        border: 5px dashed blue;
+    }
 }
