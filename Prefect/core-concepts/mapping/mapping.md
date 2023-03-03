@@ -1,0 +1,4 @@
+## Mapping in Prefect
+        Tasks are mapped on iterables. When a task is mapped on a iterable, Prefect creates child tasks dynamically for each element in the iterable. Results are reduced to a list if downstream task is a non-mapped task. If it's a mapped task, results are not reduced, nth upstream child task is connected to nth downstream child task.
+
+        If an output of a mapped task is fed into another mapped task as input and it fails/skips, it causes subsequent task to fail/skip as well. If it is desired to exclude outputs of these failed/skipped tasks or None outputs, Prefect provides FilterTask() functionality.
