@@ -3,8 +3,9 @@ from prefect import Flow, Parameter, task, Task
 # Each step is a task. A task can be created by just 
 # decorating a function.
 @task
-def say_hello(person: str):
-    print(f"Hello, {person}!")
+def say_hello(persons: str):
+    for person in persons:
+        print(f"Hello, {person}!")
 
 
 # Tasks can optionally accept inputs and produce outputs.
