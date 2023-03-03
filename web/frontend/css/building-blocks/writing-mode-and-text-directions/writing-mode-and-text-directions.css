@@ -1,0 +1,7 @@
+.container {
+    writing-mode: vertical-rl;
+}
+
+.horizontal-tb {
+    writing-mode: horizontal-tb;
+}

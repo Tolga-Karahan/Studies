@@ -1,0 +1,16 @@
+.overflow {
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    font-size: 250%;
+    overflow-wrap: normal;
+}
+
+.overflow-scrolled {
+    margin-top: 3em;
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    overflow: scroll;
+    font-size: 250%;
+}
