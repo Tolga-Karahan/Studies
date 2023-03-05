@@ -75,3 +75,10 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
     background-color: rgba(255,255,255,0.1); 
 }
+
+/* caption */
+caption {
+    padding: 20px;
+    caption-side: bottom;
+    letter-spacing: 1px;
+}
