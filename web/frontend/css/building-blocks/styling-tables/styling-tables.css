@@ -1,0 +1,84 @@
+/* layout */
+
+table {
+    /* To size columns according
+    to the width of the headings */
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+/* Thanks to table-layout: fixed,
+widths of headings will be used
+as widths of the columns. */
+thead th:nth-child(1) {
+    width: 30%;
+}
+
+thead th:nth-child(2) {
+    width: 20%;
+}
+  
+  thead th:nth-child(3) {
+    width: 15%;
+}
+  
+  thead th:nth-child(4) {
+    width: 35%;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+/* typography */
+
+html {
+    font-family: 'Metal Mania', cursive;
+}
+
+th {
+    letter-spacing: 2px;
+}
+
+td {
+    letter-spacing: 1px;
+}
+
+tbody td {
+    text-align: center;
+}
+
+tfoot th {
+    text-align: right;
+}
+
+thead,
+tfoot {
+    background: linear-gradient(60deg, black 1%, white 90%);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+tbody {
+    background: url("cross.jpg");
+    color: white;
+}
+
+/* zebra striping  */
+tbody tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.1);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.1); 
+}
+
+/* caption */
+caption {
+    padding: 20px;
+    caption-side: bottom;
+    letter-spacing: 1px;
+}
