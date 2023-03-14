@@ -1,10 +1,19 @@
 name: learn-github-actions
+# It will run on each push or merge of a PR to the
+# every branch. We can further specialize it by
+# specifying branches, paths, or tags.  
 on: [push]
+# Each job runs in its own VM runner or container.
+# By default they run in parallel. Dependencies
+# can be specified between jobs.
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
+    # Steps either run user defined scripts or an action.
+    # They are executed in order in the same runner.
     steps:
       # uses keyword is used to specify an Github action.
+      # Github actions are re-usable, predefined tasks.
       # In this case v3 of the actions/checkout action is
       # used.
       - uses: actions/checkout@v3
