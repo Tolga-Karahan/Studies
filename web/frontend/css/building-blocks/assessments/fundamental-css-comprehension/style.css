@@ -1,0 +1,69 @@
+/* General styles - put these straight into your stylesheet */
+
+body {
+    margin: 0;
+  }
+  
+html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 15px;
+    background-color: #ccc;
+}
+
+h2, p {
+    margin: 0;
+}
+
+/* Styles for setup of card container */
+.card {
+    width: 45em;
+    height: 22em;
+    background-color: rgb(161, 160, 160) ;
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+    margin: 5em auto;
+}
+
+/* Styles for header and footer */
+.card header {
+    color: white;
+    /* background: linear-gradient(to bottom, rgb(245, 24, 9) 40%, black 96%); */
+    background: linear-gradient(to bottom, rgb(139, 135, 135) 40%, black 96%);
+    border-radius: 1.5em 1.5em 0 0;
+    height: 5em;
+}
+
+.card header h2 {
+    font-size: 2em;
+    line-height: 2.5em;
+    text-align: center;
+}
+
+.card footer {
+    background: linear-gradient(to bottom, rgb(139, 135, 135) 40%, black 96%);
+    border-radius: 0 0 1.3em 1.3em;
+    height: 5em;
+    color: white;
+    text-align: center;
+}
+
+.card footer p {
+    font-size: 1.5em;
+    line-height: 2.5em;
+}
+
+/* Styles for main card content */
+.card article {
+    height: 12em;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+
+.card img {
+    float: right;
+    height: 100%;
+}
+
+.card article p {
+    padding: 1em;
+    font-size: 1.25em;
+}
