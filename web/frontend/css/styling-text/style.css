@@ -1,0 +1,31 @@
+/* Reference for rem unit */
+html {
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 1rem red, -1px -1px 1rem yellow;
+    text-align: center;
+}
+
+h1 + p {
+    font-weight: bold;
+}
+
+p {
+    /* Used if font is available on client machine.
+    Some fonts such as Arial are available on every
+    machine. They are called web safe fonts. To
+    cover the possibility that client machine does
+    not have the specified font, we can use font
+    stacks. A font stack is a comma separated list
+    of fonts. Browsers start from the first one 
+    until they can find a font present in client.*/
+    font-family: 'Trebuchet MS', Verdana, sans;
+    font-size: 1.5rem;
+    color: red;
+    text-decoration: underline yellow wavy;
+    line-height: 1.6;
+}
