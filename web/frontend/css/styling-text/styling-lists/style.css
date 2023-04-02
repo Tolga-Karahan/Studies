@@ -1,0 +1,45 @@
+/* General styles */
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* To make lists and paragraphs to use
+same font size, hence top/bottom spacing
+in  order to achive vertical rhytm. */
+ul,
+ol,
+dl,
+p {
+    font-size: 1.5rem;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+ul {
+    list-style-type: square;
+}
+
+/* To make paragraphs and list elements
+to have same spacing betwen lines. Again,
+to achieve vertical consistency and rhytm. */
+li,
+p {
+    line-height: 1.5;
+}
+
+/* Description list styles */
+dd,
+dt {
+    line-height: 1.5;
+}
+
+dt {
+    font-weight: bold;
+}
