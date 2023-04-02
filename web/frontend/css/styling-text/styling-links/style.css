@@ -1,0 +1,85 @@
+body {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+}
+
+a {
+    cursor: grab;
+    outline: none;
+}
+
+/* Because link styles build on one another,
+there is a strict order by which rules must
+present in stylesheets. Styles comes first,
+apply to styles comes later too! For example,
+when a link is actiavated it is possibly
+hovered over too. */
+
+/* Applies if link has a href. */
+a:link {
+    color: #6900ff;
+}
+
+a:visited {
+    color: #a5c300;
+}
+
+a:focus {
+    /* Outline doesn't take any space
+    as borders do. It just sits over
+    the top of the background. */
+    text-decoration: none;
+    background: #bae498;
+}
+
+a:hover {
+    text-decoration: none;
+    background: #cdfeaa;
+}
+
+a:active {
+    background: #6900ff;
+    color: #cdfeaa;
+}
+
+/* Adding icon to the link */
+a[href*="wikipedia"] {
+    /* 100% of the way to the right of
+    the text, 0 pixels from the top */
+    background: url("external-link-icon.png") no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+}
+
+/* Styling links as buttons for the navbar */
+.navbar-contaniner {
+    display: flex;
+    gap: 0.625%;
+}
+
+.navbar-contaniner a {
+    flex: 1;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    line-height: 3;
+    color: black;
+}
+
+.navbar-contaniner a:link,
+.navbar-contaniner a:visited,
+.navbar-contaniner a:focus {
+    background: palegoldenrod;
+    color: black;
+}
+
+.navbar-contaniner a:hover {
+    background: orange;
+}
+
+.navbar-contaniner a:active {
+    background: darkred;
+    color: white;
+}
