@@ -1,0 +1,125 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    letter-spacing: 0.8px;
+    word-spacing: 2px;
+}
+
+/* Layout */
+section {
+    float: left;
+    width: 50%;
+}
+
+aside {
+    float: left;
+    width: 30%;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+}
+
+header, section, aside, nav, footer {
+    padding: 20px;
+}
+
+/* header and footer */
+header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+
+header {
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Assistant', sans-serif;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+}
+
+p,
+a,
+dl,
+ol,
+ul {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+section h2 + p {
+    text-indent: 20px;
+}
+
+/* Link styling */
+a {
+    color: #a66;
+}
+
+a[href^="http"] {
+    background: url("../../styling-links/external-link-icon.png") no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+}
+
+a:link {
+    color: #a66;
+}
+
+a:visited {
+
+}
+
+a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    background: #a66;
+    color: white;
+    font-size: 2rem;
+}
+
+/* sidebar specific styles */
+aside li {
+    list-style-type: square;
+}
+
+/* navbar specific styles */
+nav li {
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 2rem;
+    text-decoration: none;
+    width: 100%;
+    padding: 20px;
+    outline: solid 1px #a66;
+    text-align: center;
+}
