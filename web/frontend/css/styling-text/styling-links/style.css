@@ -7,15 +7,18 @@ body {
 
 a {
     cursor: grab;
+    /* Outline doesn't take any space
+    as borders do. It just sits over
+    the top of the background. */
     outline: none;
 }
 
 /* Because link styles build on one another,
 there is a strict order by which rules must
-present in stylesheets. Styles comes first,
+present in stylesheets. Styles comes first
 apply to styles comes later too! For example,
-when a link is actiavated it is possibly
-hovered over too. */
+when a link is actiavated it had possibly
+been hovered over too. */
 
 /* Applies if link has a href. */
 a:link {
@@ -27,9 +30,6 @@ a:visited {
 }
 
 a:focus {
-    /* Outline doesn't take any space
-    as borders do. It just sits over
-    the top of the background. */
     text-decoration: none;
     background: #bae498;
 }
