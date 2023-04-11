@@ -1,0 +1,116 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    background: purple;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+}
+
+article {
+    padding: 10px;
+    margin: 10px; 
+    background: aqua;
+}
+
+.first-section {
+    display: flex;
+}
+
+.second-section  {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+.second-section article {
+    /* Give each article at least 200px width,
+    and make them share the space left equally */
+    flex: 1 200px;
+}
+
+.second-section article:nth-child(even) {
+    /* Give more space to even articles.
+    Because others have weight 1, these
+    get 2/3 of the available space. */
+    flex: 2;
+}
+
+.button-div {
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    /* Defines where flex items sit in
+    cross axis. */
+    align-items: center;
+    /* Defines how space between and around of
+    items are distributed in main axis for flex
+    items, and in inline axis for grid items. */
+    justify-content: space-around;
+
+}
+
+.basic-button {
+    flex: 1;
+    margin: 10px;
+}
+
+.basic-button:nth-child(even) {
+    /* To align individual flex items */
+    align-self: flex-end;
+}
+
+.basic-button:first-child {
+    /* Order in which flex items appear
+    can be changed without changing the
+    HTML code. Items with more weights
+    appear later. Default value is 0.
+    Items with same weight appear
+    according to the source code. */
+    order: 1;
+}
+
+.basic-button:last-child {
+    order: -1;
+}
+
+.complex-section {
+    display: flex;
+
+}
+
+.complex-article {
+    flex: 1 200px;
+}
+
+.complex-article:nth-of-type(3) {
+    flex: 3 200px;
+    flex-direction: column;
+    display: flex;
+}
+
+.complex-article:nth-of-type(3) div {
+    flex: 1 100px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.complex-button {
+    flex: 1 auto;
+    margin: 5px;
+    font-size: 18px;
+    line-height: 1.5;
+}

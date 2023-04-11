@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
- Layouts
+
 ## Normal flow
-    Normal flow is how browsers lay out HTML by default.
+    Normal flow is how browsers lay out HTML by default. First, any padding, border, or margin that elements have are added to their content. A block level element's content fills the available inline space, and element grows in block dimension to accommodate its content. Size of inline elements are just size of their content. Width, and height can't be set on them. Only exception is images.
 
 ## Methods to change layout
     1) display property: It can change how elements behave in normal flow, for example by making an inline element to behave like a block element by getting values such as inline, block, inline-block, etc. It can also determine how child elements will be laid out in parent elements.
@@ -15,7 +15,7 @@
     5) Multi-column layout: To layout content in columns.
 
 ## Flexbox
-    Flexbox is for laying out items in one dimension either in rows or columns. display:flex is used to lay out child elements in one dimension.
+    Flexbox is for laying out items in one dimension either in rows or columns. display:flex is used to lay out child elements in one dimension. Elements in this layout, can expand if there is more space, or shrink to fit into available space. By default, space is used evenly between flex items. They have same width and height.
 
 <div class="flex-wrapper">
     <div class="flex-box">One</div>
