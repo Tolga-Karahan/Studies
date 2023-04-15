@@ -50,7 +50,7 @@ article {
 .button-div {
     height: 100px;
     border: 1px solid black;
-    display: flex;
+    display: flex;  
     /* Defines where flex items sit in
     cross axis. */
     align-items: center;
@@ -109,7 +109,10 @@ article {
 }
 
 .complex-button {
+    /* To make buttons take up
+    as much space as they can */
     flex: 1 auto;
+    flex-wrap: wrap;
     margin: 5px;
     font-size: 18px;
     line-height: 1.5;
