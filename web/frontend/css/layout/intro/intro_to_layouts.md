@@ -45,7 +45,7 @@
 </div>
 
 ## Floats
-    Floating an element changes behaviour of the element and following elements in normal flow. Floated element is removed from the normal flow and surrounding content floats around it.
+    Floating an element changes behaviour of the element and following elements in normal flow. Floated element is removed from the normal flow and surrounding content floats around it. Before grid and flex layouts, it was being used to create multi-column layouts. Actually, it is intended for floating an element, mostly an image, inside text. 
 
 <h2>Float Example</h2>
 <div class="float-div">Float</div>
