@@ -62,7 +62,7 @@
 </p>
 
 ## Positioning
-    There are five positioning types:
+    Positioning gets elements out of normal flow such as making them sit on top of each other, or fixing their position in the same place in browser viewport. There are five positioning types:
 
        1) Static positioning: Default position of an element in the flow.
        2) Relative positioning: Moving an element in relative to its position in normal flow.

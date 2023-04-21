@@ -1,0 +1,54 @@
+body {
+    width: 500px;
+    height: 1400px;
+    margin: 0 auto;
+}
+
+p {
+    background: aqua;
+    border: 3px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Positioning the element relative to its
+position in normal flow. */
+.relative {
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+/* Absolute positioned element is completely
+out of the document flow and has its own layer.
+Now, top, left, etc. is not relative to the
+place that element actually belongs in normal
+document flow. If no ancestor elements define
+position property, then it is relative to the
+initial containing block which has dimensions
+of the viewport. Otherwise it is relative to
+the ancestor. */
+.absolute {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+
+/* Fixed positioning fixes an element relative to
+the visible portion of the viewport.  */
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    margin-top: 0;
+}
+
+/* Sticky positioning is between relative and fixed.
+It acts like relatively positioned element until
+it is scrolled up to defined threshold, and then
+starts behaving like fixed element. */
+.sticky {
+    position: sticky;
+    top: 30px;
+    left: 30px;
+}
