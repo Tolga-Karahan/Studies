@@ -1,0 +1,27 @@
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: 2em auto;
+    font: .9em/1.2 Arial, Helvetica, sans-serif; 
+}
+
+/* We can enable multi column layout
+by setting column-count or column-width.
+When column-width is specified, browser
+tries to give as many columns as fits
+into the page. Space left is shared
+between columns. */
+.container {
+    column-count: 3;
+    column-gap: 25px;
+    /* To add border like property
+    between columns. */
+    column-rule: 2px dashed red;
+}
+
+h2 {
+    column-span: all;
+    text-align: center;
+    background: aqua;
+}
+
