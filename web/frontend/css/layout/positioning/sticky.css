@@ -1,0 +1,14 @@
+/* Normally dt elements are scrolled, but with
+sticky positioning they will stick to top
+of viewport. Each dt will replace previous
+one. */
+dt {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 1em 0;
+  }
+  
