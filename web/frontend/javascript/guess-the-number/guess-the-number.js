@@ -12,6 +12,9 @@ const guessField = document.querySelector(".guessField");
 let guessCount = 1;
 let resetButton;
 
+// To put cursor automatically into the input field
+guessField.focus();
+
 // function keyword is used to define functions
 function checkGuess() {
     const userGuess = Number(guessField.value);
