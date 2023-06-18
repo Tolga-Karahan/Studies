@@ -85,6 +85,21 @@ myArr.shift()
 // removing an element by using its index
 myArr.splice(1);
 
+// mapping elements to new ones
+myNums = [1, 2, 3];
+console.log(myNums.map((x) => 2 * x));
+
+// filtering elements in an array
+myNums.filter((x) => x >= 2);
+
+// splitting an string to an array
+myStr = "abc, def, ghi";
+strArr = myStr.split(',');
+// to convert it to the same string
+myStr = strArr.join(',');
+
+
+
 // A simple loop
 const fruits = ["apple", "banana", "grape"]
 for (const fruit of fruits) {
