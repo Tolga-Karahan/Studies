@@ -98,11 +98,67 @@ strArr = myStr.split(',');
 // to convert it to the same string
 myStr = strArr.join(',');
 
+// Conditionals
+// plain old if-else statement
+myBoolean = true;
+if (myBoolean) {
+    console.log("My boolean is true!");
+} else {
+    console.log("My boolean is false!");
+}
 
+// Any value that is not false, undefined, null,
+// 0, NaN, or "" returns true when tested
+
+// We should rely to switch stateemnts if there
+// are too many conditions
+const choice = "1";
+switch (choice){
+    case "1":
+        console.log("Choice is 1");
+        break;
+    case "2":
+        console.log("Choice is 2");
+        break;
+}
+
+// Ternary
+let ternaryVal = true ? 5 : 3;
+console.log(ternaryVal);
 
 // A simple loop
+for (let i=1; i < 10; i++) {
+    console.log(i);
+}
+// a foreach
 const fruits = ["apple", "banana", "grape"]
 for (const fruit of fruits) {
     console.log(fruit);
 }
+
+// Functions
+// a simple function
+function myFunction() {
+    console.log("hey");
+}
+
+// an anonymous function
+(function () {
+    console.log("hey");
+})
+
+// arrow function notation can be used
+// instead of anonymous functions
+(() => console.log("Hey"));
+
+// if arrow function only accepts one
+// parameter, there is no need to use
+// brackets
+(param => console.log(param));
+
+// if a arrow function only consists of
+// a return statement, there is no need
+// to specify return explicitly either
+(param => param * 2);
+
 
