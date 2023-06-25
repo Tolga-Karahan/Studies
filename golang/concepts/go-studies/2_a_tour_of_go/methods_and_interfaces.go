@@ -62,9 +62,39 @@ type VertexInterface interface {
 	nill_rec_example()
 }
 
-// Lets add a String() method to Vertex type
-func (v *Vertex) String() string {
-	return fmt.Sprintf("X:%v, Y:%v", v.X, v.Y)
+// One of the most used interfaces is Stringer
+// interface which is defined in fmt package.
+// A Stringer is a type that is able to describe
+// itself as a string.
+type Stringer interface {
+    String() string
+}
+
+type IPAddr byte[4]
+func (v IPAddr) String() string {
+    return fmt.Sprintf("%d.%d.%d.%d", v[0], v[1], v[2], v[3])
+}
+
+// Another most used interface is Error which
+// is used to express error state
+type error interface {
+    Error() string
+}
+
+type MyError interface {
+    When time.Time
+    What string
+}
+
+func (e *MyError) Error() string {
+    return fmt.Sprintf("at %v, %s", e.When, e.What)
+}
+
+func GetError() error {
+    return &MyError{
+        time.Now(),
+        "it didn't work"
+    }
 }
 
 func main() {
@@ -153,28 +183,6 @@ func main() {
 	default:
 		fmt.Println("v has a unknown type!")
 	}
-
-	/*
-		One of the common interfaces is Stringer
-		which is a type that can describe itself
-		as a string.
-
-		type Stringer interface{
-			String() string
-		}
-	*/
-
-	// Lets allow Vertex v to describe itself
-	fmt.Println(v)
-
-	/*
-		Similar to Stringer anothor common
-		interface is error:
-
-		type error interface{
-			Error() string
-		}
-	*/
 
 	/*
 		io package has a Reader interface
