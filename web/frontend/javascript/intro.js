@@ -162,3 +162,39 @@ function myFunction() {
 (param => param * 2);
 
 
+// Events
+// adding an event handler
+btn = document.querySelector("button");
+
+function clickHandler() {
+    console.log("Hey!");
+}
+btn.addEventListener("click", clickHandler);
+
+// we can also remove event listeners
+btn.removeEventListener("click", clickHandler);
+
+// we can also delete an event listener via
+// controllers and AbortSignal
+const controller = new AbortController(); 
+btn.addEventListener("click",
+    () => console.log("Hey"),
+    { signal: controller.signal }
+);
+controller.abort();
+
+// we can utilize event objects in event
+// handlers. target property is the element
+// targeted by the event, currentTarget 
+// is the element that is handling the event
+btn.addEventListener("click", (event) => {
+    event.target.style.backgroundColor = "red";
+})
+
+// When event listeners are added to parent
+// elements, event is invoked by interacting
+// with child elements too. If child element
+// also have a listener added to it, first
+// listener of the child elements is invoked
+// and then delagation goes up in the hierarchy.
+// It is called event bubling in Javascript
