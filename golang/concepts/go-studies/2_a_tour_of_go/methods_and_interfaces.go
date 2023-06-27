@@ -197,22 +197,4 @@ func main() {
 
 		func (T) Read(b []byte) (n int, err error)
 	*/
-
-	/* Go functions can work on multiple
-	   types by using type parameters.
-	   An example signature:
-	   func Index[T comparable](s []T, x T) int
-
-	   Above signature states that T is
-	   any type that fulfills built-in
-	   comparable constraint.
-
-	   Besides generic functions, generic
-	   types also can be created:
-
-	   type List[T any] struct {
-			next *List[T]
-			val T
-	   }
-	*/
 }
