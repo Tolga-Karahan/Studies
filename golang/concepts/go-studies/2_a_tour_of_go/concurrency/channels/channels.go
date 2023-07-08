@@ -17,6 +17,15 @@ func sum(s []int, c chan int) {
 	c <- sum
 }
 
+func fibonacci(n int, c chan int) {
+	first, second := 0, 1
+	for i :=0; i < n; i++ {
+		c <- first
+		first, second = second, first + second
+	}
+	close(c)
+}
+
 func main() {
 	// Channels must be created before usage
 	ch := make(chan int)
@@ -40,4 +49,23 @@ func main() {
 
 	fmt.Printf("Sum of the first half: %v\n", sum_first)
 	fmt.Printf("Sum of the second half: %v\n", sum_last)
+
+	// Channels can be closed by sender.
+	// A receiver checks by adding second
+	// variable to the receive expression.
+	c := make(chan int, 5)
+	go fibonacci(cap(c), c)
+
+	// Receive values until channel closes
+	for v := range c {
+		fmt.Println(v)
+	}
+
+	// Test if channel is closed
+	_, ok := <- c
+	fmt.Printf("Channel is open: %v\n", ok)
+
+	// Receiver musn't close the channel
+	// Otherwise it will cause a panic,
+	// when sender attempt to send
 }
