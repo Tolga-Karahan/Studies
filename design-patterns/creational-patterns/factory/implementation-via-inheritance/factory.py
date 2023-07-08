@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-from product import ConcreteProduct1, ConcreteProduct2
+from product import Product, ConcreteProduct1, ConcreteProduct2
 
 
 class Creator(ABC):
     @abstractmethod
-    def factory_method(self):
+    def factory_method(self) -> Product:
         pass
 
     def operation(self) -> str:
@@ -14,10 +14,10 @@ class Creator(ABC):
 
 
 class ConcreteCreator1(Creator):
-    def factory_method(self):
+    def factory_method(self) -> Product:
         return ConcreteProduct1()
 
 
 class ConcreteCreator2(Creator):
-    def factory_method(self):
+    def factory_method(self) -> Product:
         return ConcreteProduct2()
