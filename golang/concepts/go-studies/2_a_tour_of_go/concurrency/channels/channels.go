@@ -21,6 +21,13 @@ func main() {
 	// Channels must be created before usage
 	ch := make(chan int)
 
+	// We can define a buffered channel too
+	// by providing size with second argument
+	// Sends to a full buffered channel is a
+	// blocking operation. Reads from a empty
+	// buffered channel is also a blocking
+	// operation.
+
 	// Define the slice on which gorounites
 	// will work
 	s := []int {7, 2, 8, -9, 4, 0}
