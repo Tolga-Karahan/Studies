@@ -22,6 +22,11 @@ func adder() func(int) int {
 	}
 }
 
+// Go functions can return multiple values
+func returnMultiple() (int, int) {
+	return 5, 7
+}
+
 // We can provide arbitrary number of
 // arguments to variadic functions. To
 // make a variadic function, "..." is
