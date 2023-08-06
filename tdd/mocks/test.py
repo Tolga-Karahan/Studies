@@ -1,6 +1,13 @@
 from datetime import datetime
 
-from objects import DBEngine, Employee, get_environment, get_time_of_day
+import objects
+from objects import (
+    DBEngine,
+    double_constant,
+    Employee,
+    get_environment,
+    get_time_of_day,
+)
 
 import pytest
 
@@ -50,6 +57,18 @@ def test_monthly_schedule(mocker):
     assert "Success" == schedule
 
 
+def test_get_department(mocker):
+    employee = Employee("Not", "Exist", 5000)
+    mocked_request = mocker.patch("objects.requests.get")
+    mocked_request.return_value.status_code = 200
+    mocked_request.return_value.json.return_value = {"Departmnet": "IT"}
+
+    response = employee.get_department()
+    mocked_request.assert_called_with("http://company.com/Exist/Not")
+    assert 200 == response.status_code
+    assert {"Departmnet": "IT"} == response.json()
+
+
 # monkeypatch fixture can be used to mock
 # environment related settings
 @pytest.mark.parametrize(
@@ -67,3 +86,10 @@ def test_get_environment_exception(monkeypatch):
 
     with pytest.raises(ValueError, match="Unknown Environment"):
         get_environment()
+
+
+# Mock a constant
+def test_double_constant(mocker):
+    # Mock the constant
+    mocker.patch.object(objects, "SOME_CONSTANT", 5)
+    assert 10 == double_constant()

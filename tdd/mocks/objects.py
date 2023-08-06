@@ -1,6 +1,9 @@
 from datetime import datetime
 import os
 import requests
+import time
+
+SOME_CONSTANT = 3
 
 
 def get_time_of_day():
@@ -48,6 +51,9 @@ class Employee:
         else:
             return "Bad Response!"
 
+    def get_department(self):
+        return requests.get(f"http://company.com/{self.last}/{self.first}")
+
 
 def get_environment():
     env = os.getenv("ENVIRONMENT")
@@ -57,3 +63,7 @@ def get_environment():
     elif env == "dev":
         return "dev-env"
     raise ValueError("Unknown Environment")
+
+
+def double_constant():
+    return SOME_CONSTANT * 2
