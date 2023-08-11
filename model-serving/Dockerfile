@@ -14,4 +14,4 @@ RUN chmod +x adjoe_task/start.sh
 
 EXPOSE 8000
 
-CMD ["/bin/bash", "adjoe_task/start.sh"]
+CMD ["/bin/bash", "prediction-service/start.sh"]
