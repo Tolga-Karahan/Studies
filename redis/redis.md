@@ -1,8 +1,8 @@
 ## Redis
 
-Redis stands for remote dictionary server. It's a in-memory database. Mostly used as a cache to improve performance, but can be used as a fully-fledged database as   
-well. It's a multi-model database and able to store different data structures. We can use Redis Core as key-value store, and extend Redis with Redis modules such as  
-RediSearch, RedisGraph, RedisTimeSeries, etc to support different data types. 
+Redis stands for remote dictionary server. It's a in-memory database. Mostly used as a cache to improve performance, but can be used as a fully-fledged database  
+as well. It's a multi-model database and able to store different data structures. We can use Redis Core as key-value store, and extend Redis with Redis modules  
+such as RediSearch, RedisGraph, RedisTimeSeries, etc to support different data types. 
 
 Redis doesn't need schemas, it is a schemaless database. Because it doesn't need to create schemas, it initializes fast.
 
