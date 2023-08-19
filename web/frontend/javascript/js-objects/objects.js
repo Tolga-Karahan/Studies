@@ -79,9 +79,16 @@ person2.greet();
 
 // Properties directly defined on the object is called
 // own properties. It can be checked via Object.hasOwn().
+console.log(Object.hasOwn(person2, "name"))
+
 
 // OOP constructs can be defined in JS in more traditional
-// way, although they use prototypes under the hood
+// way, although they use prototypes under the hood.
+// Prototypes resembles inheritance, but there are
+// differences. For example in classical OOP, properties
+// of a subclass and baseclass is combined in a single
+// object. With prototyping, each prototype is a separate
+// object. Prototype chain behaviour is more like delagation.
 class Person {
     // Not mandatory. Constructor can create the field
     // # is added to make field private
@@ -89,16 +96,16 @@ class Person {
 
     constructor(name) {
         this.name = name;
-        this.#privateMethod()
+        this.#privateMethod();
     }
 
     // # is added to make methods private as well
     #privateMethod() {
-        console.log("It's a private method!")
+        console.log("It's a private method!");
     }
 
     introduceSelf() {
-        console.log(`Hi. I'm ${this.name}!`)
+        console.log(`Hi. I'm ${this.name}!`);
     }
 }
 
