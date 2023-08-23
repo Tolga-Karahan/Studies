@@ -7,6 +7,9 @@
             - Isolation
             - Durability
 
+    WAL can be used to ensure atomicity and durability. All changes are first written to a write-ahead log which must be  
+    recorded in a stable storage. These changes are then flushed to disk in an appropriate time. 
+
 ### Atomicity
     Atomicity ensure that operations in a transaction either fail together or succeed together. They execute as a single  
     unit and in case of a failure of any operation, whole transaction fails and database is left unchanged. Otherwise, partially  
@@ -22,4 +25,3 @@
 
 ### Durability
     If a transaction is committed, changes it made must be persistent even in case of a failure.
-
