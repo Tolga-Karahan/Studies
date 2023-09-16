@@ -3,7 +3,7 @@
     pip install -r requirements.txt
 
 ## How to start API in local
-Go to root directory(adjoe-task)  
+Go to root directory 
 Make start script executable:  
     
     chmod u+x prediction-service/start.sh
