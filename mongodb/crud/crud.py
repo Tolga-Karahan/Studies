@@ -15,8 +15,19 @@ def get_collection(db: Database, collection: str) -> Collection:
     return db.get_collection(collection)
 
 
-def create_collection(db: Database, collection: str, validator: dict = None):
-    db.create_collection(collection, validator=validator)
+def create_collection(
+    db: Database,
+    collection: str,
+    validator: dict = None,
+    validation_level: str = "strict",
+    validation_action="error",
+):
+    db.create_collection(
+        collection,
+        validator=validator,
+        validation_level=validation_level,
+        validation_action=validation_action,
+    )
 
 
 def insert_one(collection: Collection, data: dict):

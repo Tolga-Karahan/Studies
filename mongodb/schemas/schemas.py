@@ -37,7 +37,8 @@ if __name__ == "__main__":
     # Clear the DB
     client.drop_database(db)
 
-    # Create collections
+    # Create collections with validators
+    validation_action = "warn"
     customers_validator = {
         "$jsonSchema": {
             "bsonType": "object",
@@ -52,8 +53,12 @@ if __name__ == "__main__":
             "properties": {"type": {"bsonType": "string"}},
         }
     }
-    create_collection(db, "customers", customers_validator)
-    create_collection(db, "products", products_validator)
+    create_collection(
+        db, "customers", customers_validator, validation_action=validation_action
+    )
+    create_collection(
+        db, "products", products_validator, validation_action=validation_action
+    )
 
     customers = get_collection(db, "customers")
     products = get_collection(db, "products")
