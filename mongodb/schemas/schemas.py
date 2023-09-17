@@ -38,8 +38,20 @@ if __name__ == "__main__":
     client.drop_database(db)
 
     # Create collections
-    customers_validator = {"$jsonSchema": {"bsonType": "object", "required": ["name"]}}
-    products_validator = {"$jsonSchema": {"bsonType": "object", "required": ["type"]}}
+    customers_validator = {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "required": ["name"],
+            "properties": {"name": {"bsonType": "string"}},
+        }
+    }
+    products_validator = {
+        "$jsonSchema": {
+            "bsonType": "object",
+            "required": ["type"],
+            "properties": {"type": {"bsonType": "string"}},
+        }
+    }
     create_collection(db, "customers", customers_validator)
     create_collection(db, "products", products_validator)
 
