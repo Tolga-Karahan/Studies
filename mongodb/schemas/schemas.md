@@ -23,4 +23,4 @@
     In general this decision depends on relationships in our data, how frequently we make changes and application specific
     requirements.
 
-
+    We can add validation to our schemas as well. To do it we use $jsonSchema object in PyMongo.
