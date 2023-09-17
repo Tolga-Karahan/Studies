@@ -6,6 +6,10 @@ from pymongo import MongoClient
 from pymongo.collection import Collection
 
 
+def get_db(client: MongoClient, db: str):
+    return client.get_database(db)
+
+
 def get_collection(client: MongoClient, db: str, collection: str) -> Collection:
     return client.get_database(db).get_collection(collection)
 
