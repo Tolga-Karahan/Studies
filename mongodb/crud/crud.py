@@ -4,14 +4,19 @@ from random import randint, choice
 
 from pymongo import MongoClient
 from pymongo.collection import Collection
+from pymongo.database import Database
 
 
 def get_db(client: MongoClient, db: str):
     return client.get_database(db)
 
 
-def get_collection(client: MongoClient, db: str, collection: str) -> Collection:
-    return client.get_database(db).get_collection(collection)
+def get_collection(db: Database, collection: str) -> Collection:
+    return db.get_collection(collection)
+
+
+def create_collection(db: Database, collection: str, validator: dict = None):
+    db.create_collection(collection, validator=validator)
 
 
 def insert_one(collection: Collection, data: dict):
@@ -120,9 +125,9 @@ def print_many(cursor, msg=None):
 
 
 if __name__ == "__main__":
-    db = collection = "tutorial"
     client = MongoClient()
-    collection = get_collection(client, db, collection)
+    db = get_db(client, "tutorial")
+    collection = get_collection(db, "tutorial")
 
     pprint(f"Server info:{client.server_info()}")
     pprint(f"Databases:{client.list_database_names()}")
