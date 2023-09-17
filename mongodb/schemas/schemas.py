@@ -3,11 +3,7 @@ from typing import List
 from pymongo import MongoClient
 from pymongo.collection import Collection
 
-from crud.crud import find_all, delete_all, print_many
-
-
-def connect(client: MongoClient, db: str, collection: str) -> Collection:
-    return client.get_database(db).get_collection(collection)
+from crud.crud import create_collection, find_all, get_collection, get_db, print_many
 
 
 def insert_many(collection: Collection, data: List[dict]):
@@ -36,13 +32,19 @@ def aggregate(collection: Collection, aggregations: List[dict]):
 
 if __name__ == "__main__":
     client = MongoClient()
-    db = "shop"
-    customers = connect(client, db, "customers")
-    products = connect(client, db, "products")
+    db = get_db(client, "shop")
 
     # Clear the DB
-    delete_all(customers)
-    delete_all(products)
+    client.drop_database(db)
+
+    # Create collections
+    customers_validator = {"$jsonSchema": {"bsonType": "object", "required": ["name"]}}
+    products_validator = {"$jsonSchema": {"bsonType": "object", "required": ["type"]}}
+    create_collection(db, "customers", customers_validator)
+    create_collection(db, "products", products_validator)
+
+    customers = get_collection(db, "customers")
+    products = get_collection(db, "products")
 
     # Insert data
     insert_some_data(customers, products)
