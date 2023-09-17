@@ -25,8 +25,8 @@ def create_collection(
     db.create_collection(
         collection,
         validator=validator,
-        validation_level=validation_level,
-        validation_action=validation_action,
+        validationLevel=validation_level,
+        validationAction=validation_action,
     )
 
 
