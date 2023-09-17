@@ -116,7 +116,7 @@ def print_many(cursor, msg=None):
 
 
 if __name__ == "__main__":
-    db = collection = "shop"
+    db = collection = "tutorial"
     client = MongoClient()
     connection = connect(client, db, collection)
 
