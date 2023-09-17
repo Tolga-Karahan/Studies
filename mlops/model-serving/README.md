@@ -1,9 +1,9 @@
 ## Create Virtual Env
-    conda create -n adjoe-task-env python==3.9
+    conda create -n prediction-service-env python==3.9
     pip install -r requirements.txt
 
 ## How to start API in local
-Go to root directory(adjoe-task)  
+Go to root directory 
 Make start script executable:  
     
     chmod u+x prediction-service/start.sh
