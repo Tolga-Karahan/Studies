@@ -42,7 +42,7 @@ def delete_one(connection: Collection, filter: dict):
     return connection.delete_one(filter=filter)
 
 
-def delete_all(connection):
+def delete_all(connection: Collection):
     return connection.delete_many(filter={})
 
 
