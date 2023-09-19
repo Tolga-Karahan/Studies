@@ -1,3 +1,4 @@
+from typing import List
 import uuid
 from pprint import pprint
 from random import randint, choice
@@ -33,6 +34,15 @@ def create_collection(
 def insert_one(collection: Collection, data: dict):
     collection.insert_one(data)
     return data
+
+
+def insert_many(collection: Collection, data: List[dict], ordered=False):
+    # If ordered insert set to false, insert operation won't stop if
+    # there is an error while inserting a document, instead it'll
+    # continue with others. For example, if there is a key duplication
+    # error, it won't stop the operation and will insert other docs
+    # that are not present in the db.
+    collection.insert_many(data, {"ordered": ordered})
 
 
 def find_one(collection: Collection, filter: dict, projection: list = None):
