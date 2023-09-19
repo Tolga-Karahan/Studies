@@ -1,3 +1,4 @@
+from typing import List
 import uuid
 from pprint import pprint
 from random import randint, choice
@@ -30,9 +31,27 @@ def create_collection(
     )
 
 
-def insert_one(collection: Collection, data: dict):
-    collection.insert_one(data)
+# Write Concern is used to change behaviour of write operation. With
+# default values server acknowledges that we made a write request and
+# at some point it'll write it to journal and the records in the journal
+# will be written to database at another point in time. If we want data
+# to be written to the journal immediately we can make mongodb server to
+# write opration to journal immediately by setting key "j": True. "w" key
+# denotes number of instances write operation must be acknowledged.
+def insert_one(collection: Collection, data: dict, write_concern={"w": 1}):
+    collection.insert_one(data, {"write_concern": write_concern})
     return data
+
+
+def insert_many(
+    collection: Collection, data: List[dict], ordered=False, write_concern={"w": 1}
+):
+    # If ordered insert set to false, insert operation won't stop if
+    # there is an error while inserting a document, instead it'll
+    # continue with others. For example, if there is a key duplication
+    # error, it won't stop the operation and will insert other docs
+    # that are not present in the db.
+    collection.insert_many(data, {"writeConcern": write_concern, "ordered": ordered})
 
 
 def find_one(collection: Collection, filter: dict, projection: list = None):
