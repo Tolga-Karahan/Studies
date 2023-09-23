@@ -77,6 +77,12 @@ def update_one(collection: Collection, op: str, data: dict, filter: dict = {}):
     return collection.update_one(filter=filter, update=_update_stmt)
 
 
+def update_many(collection: Collection, op: str, data: dict, filter: dict = {}):
+    # We should provide the operation to update a document
+    _update_stmt = {op: data}
+    return collection.update_many(filter=filter, update=_update_stmt)
+
+
 def delete_one(collection: Collection, filter: dict):
     return collection.delete_one(filter=filter)
 
@@ -140,10 +146,12 @@ def insert_some_embed_docs(collection: Collection, n_docs=4):
                 {
                     "subject": choice(subjects),
                     "lastUpdated": f"2023{randint(1, 13)}{randint(10, 31)}",
+                    "seen": randint(0, 1000),
                 },
                 {
                     "subject": choice(subjects),
                     "lastUpdated": f"2023{randint(1, 13)}{randint(10, 31)}",
+                    "seen": randint(0, 1000),
                 },
             ],
         }
@@ -227,6 +235,12 @@ if __name__ == "__main__":
         collection, "$set", {"details.$.available": False}, {"details.subject": "crud"}
     )
 
+    # Increment qty
+    update_many(collection, "$inc", {"qty": 1}, {"name": "Intro MongoDB"})
+    print_many(
+        find_many(collection, {"name": "Intro MongoDB"}), "Docs After Incrementing qty:"
+    )
+
     # Check docs after updating an embedded doc
     print_many(find_all(collection), "Docs After Updating An Embedded Doc:")
 
@@ -237,6 +251,28 @@ if __name__ == "__main__":
     # Get all docs where sold > refunded
     cursor = find_many(collection, {"$expr": {"$gt": ["$sold", "$refunded"]}})
     print_many(cursor, "Docs with sold > refunded")
+
+    # Get all docs with subject crud and have more than
+    # 100 views. In this case, It'll return all docs that
+    # have crud and more than 100 views in details array
+    # no matter they are in the same object in the array
+    # or not.
+    cursor = find_many(
+        collection,
+        {"$and": [{"details.subject": "crud"}, {"details.seen": {"$gt": 100}}]},
+    )
+    print_many(cursor, "Docs with subject is crud and have more than 100 views:")
+
+    # If we want to match conditions only to one element
+    # in the array, we should use $elemMatch operator.
+    cursor = find_many(
+        collection,
+        {"details": {"$elemMatch": {"subject": "crud", "seen": {"$gt": 100}}}},
+    )
+    print_many(
+        cursor,
+        "Docs with detail elements that have subject crud and more than 100 views:",
+    )
 
     # Clear the collection
     delete_all(collection)
