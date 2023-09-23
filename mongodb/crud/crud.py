@@ -77,10 +77,14 @@ def update_one(collection: Collection, op: str, data: dict, filter: dict = {}):
     return collection.update_one(filter=filter, update=_update_stmt)
 
 
-def update_many(collection: Collection, op: str, data: dict, filter: dict = {}):
+def update_many(
+    collection: Collection, op: str, data: dict, filter: dict = {}, array_filters=None
+):
     # We should provide the operation to update a document
     _update_stmt = {op: data}
-    return collection.update_many(filter=filter, update=_update_stmt)
+    return collection.update_many(
+        filter=filter, update=_update_stmt, array_filters=array_filters
+    )
 
 
 def delete_one(collection: Collection, filter: dict):
@@ -231,8 +235,29 @@ if __name__ == "__main__":
     pprint(find_one(collection, {"details.subject": "crud"}, projection=["details"]))
 
     # Update one embed doc with subject crud
+    # $ only updates first matched element in the array,
+    # to update all we must use $[] operator.
     update_one(
         collection, "$set", {"details.$.available": False}, {"details.subject": "crud"}
+    )
+
+    # Add available field to all matching embedded
+    # documents in the array.
+    update_many(
+        collection,
+        "$set",
+        {"details.$[].available": False},
+        {"details.subject": "crud"},
+    )
+    print_many(find_all(collection), "Docs after updating availability:")
+
+    # We can also filter based on matched array elements
+    update_many(
+        collection,
+        "$set",
+        {"details.$[elem].popular": True},
+        {"details.subject": "crud"},
+        [{"elem.seen": {"$gt": 100}}],
     )
 
     # Increment qty
@@ -247,6 +272,9 @@ if __name__ == "__main__":
     # Get all docs which have details.available key
     cursor = find_many(collection, {"details.available": {"$exists": True}})
     print_many(cursor, "Docs with details.available key")
+
+    # Drop details.available field
+    update_many(collection, "$unset", {"details.available": ""})
 
     # Get all docs where sold > refunded
     cursor = find_many(collection, {"$expr": {"$gt": ["$sold", "$refunded"]}})
@@ -272,6 +300,34 @@ if __name__ == "__main__":
     print_many(
         cursor,
         "Docs with detail elements that have subject crud and more than 100 views:",
+    )
+
+    # We can push new elements to arrays via $push operation
+    # Pushing one element
+    update_many(
+        collection,
+        "$push",
+        {"details": {"subject": "TCP/IP", "seen": 17}},
+        {"details.subject": "security"},
+    )
+
+    # Pushing multiple elements at once
+    update_many(
+        collection,
+        "$push",
+        {
+            "details": {
+                "$each": [
+                    {"subject": "ACID", "seen": 15},
+                    {"subject": "Lazy Evaluation", "seen": 113},
+                ]
+            }
+        },
+        {"details.subject": "crud"},
+    )
+    print_many(
+        find_all(collection),
+        "Docs After Pushing New Details:",
     )
 
     # Clear the collection
