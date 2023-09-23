@@ -92,6 +92,8 @@ def insert_some_data(collection: Collection, n_docs=4):
             "Product ID": str(uuid.uuid4()),
             "type": "tutorial",
             "qty": randint(0, 100),
+            "sold": randint(0, 100),
+            "refunded": randint(0, 100),
         }
         insert_one(collection, data)
 
@@ -131,6 +133,8 @@ def insert_some_embed_docs(collection: Collection, n_docs=4):
             "Product ID": "7ed036fc-ba8f-4093-b691-60988f267367",
             "name": "Intro MongoDB",
             "qty": 55,
+            "sold": randint(0, 100),
+            "refunded": randint(0, 100),
             "type": "tutorial",
             "details": [
                 {
@@ -186,6 +190,12 @@ if __name__ == "__main__":
     cursor = find_many(collection, {"qty": {"$gt": 10}})
     print_many(cursor, "Docs with qty>10")
 
+    # Get docs with qty less than 30 or greater than 60
+    cursor = find_many(
+        collection, {"$or": [{"qty": {"$lt": 30}}, {"qty": {"$gt": 60}}]}
+    )
+    print_many(cursor, "Docs with 30<qty<60")
+
     # Get id of the first object and replace it
     obj_id = find_one(collection, filter={})["_id"]
     data = {
@@ -193,6 +203,8 @@ if __name__ == "__main__":
         "name": "Intro MongoDB",
         "qty": 55,
         "type": "tutorial",
+        "sold": randint(0, 100),
+        "refunded": randint(0, 100),
     }
     replace_one(collection, filter={"_id": obj_id}, data=data)
 
@@ -217,6 +229,14 @@ if __name__ == "__main__":
 
     # Check docs after updating an embedded doc
     print_many(find_all(collection), "Docs After Updating An Embedded Doc:")
+
+    # Get all docs which have details.available key
+    cursor = find_many(collection, {"details.available": {"$exists": True}})
+    print_many(cursor, "Docs with details.available key")
+
+    # Get all docs where sold > refunded
+    cursor = find_many(collection, {"$expr": {"$gt": ["$sold", "$refunded"]}})
+    print_many(cursor, "Docs with sold > refunded")
 
     # Clear the collection
     delete_all(collection)
