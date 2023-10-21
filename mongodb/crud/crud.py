@@ -330,5 +330,13 @@ if __name__ == "__main__":
         "Docs After Pushing New Details:",
     )
 
+    # We can use pull operator to remove elements from an array
+    update_many(collection, "$pull", {"details": {"seen": {"$lt": 100}}})
+
+    print_many(
+        find_all(collection),
+        "Docs After Pulling Details with Less Than 100 Seen:",
+    )
+
     # Clear the collection
     delete_all(collection)
