@@ -1,0 +1,14 @@
+## Security Groups
+    - They control traffic to/from EC2 instances, ports and IP ranges.
+    - Only contains allow rules.
+    - They can either reference by IP addresses or by other security groups.
+    - They can be attached to multiple instances and an instance may have multiple security groups.
+    - They are scoped to region/VPC combination.
+    - By default all inbound traffic is blocked, and all outbound traffic is allowed.
+    - Some important ports:
+        - SSH: 22
+        - FTP: 21
+        - SFTP: 22
+        - HTTP: 80
+        - SHTTP: 443 or 8443
+        - RDP: 3389
