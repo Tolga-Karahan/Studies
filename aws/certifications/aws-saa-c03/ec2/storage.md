@@ -42,7 +42,7 @@ and concurrent write operations. Allows multi-attach up to 16 EC2 instances at a
     - Attach the encrypted volume to the instance.
 - There is also a shortcut which is creating a new encrypted volume directly from unencrypted snapshot.
 
-## EFS Volume
+## EFS Volume
 - It's a managed NFS. Thus, can be mounted to many EC2s across different AZs.
 - Expensive. Paid by usage, no provision in advance. 
 - Highly available and scalable. File system scales automatically.
@@ -52,7 +52,7 @@ and concurrent write operations. Allows multi-attach up to 16 EC2 instances at a
 - Only compatible with Linux based AMI.
 - Encryption at rest via KMS.
 
-## EFS Modes & Storage Classes
+## EFS Modes & Storage Classes
 - Performance mode:
     - General purpose: Default mode. It is for latency-sensitive use cases such as CMS, web server etc.
     - Max I/O: High latency, but high throughput and parallelism. Use cases such as big data processing, media processing etc.
