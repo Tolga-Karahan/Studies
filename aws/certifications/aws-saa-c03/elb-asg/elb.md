@@ -1,6 +1,7 @@
 ## ELB
 - Stands for Elastic Load Balancer.
 - It's a managed service that is in front of multiple servers and spread load across them.
+- Scoped to multi-AZ setup in the same region.
 - It can provide a single point access to an application run across multiple servers.
 - It can seamlessly handle failures of downstream instances by forwarding traffic to instance that are working.
 - It can do healtcheck for the downstream instances, provide SSL termination, provide sticky sessions with cookies, provide high availability across zones, separate public traffic from private traffic.

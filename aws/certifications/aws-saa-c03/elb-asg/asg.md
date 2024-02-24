@@ -1,6 +1,7 @@
 ## Auto Scaling Group
 - Scales out to match the increasing load or scales in to remove redundant instances.
 - Minimum, maximum and desired number of instances can be defined.
+- Scoped to multi-AZ setup in the same region.
 - Re-creates an EC2 instance in case it is unhealthy.
 - For free. Only instances are charged.
 - Can work with load-balancers.
